@@ -146,7 +146,23 @@ Not supported.
 
 ## Linking and Navigating
 
-### `<Link>` Component
+### Navigation with `<Link>` component
+
+Invoking on App Router
+```js
+import Link from 'next/link';
+...
+return <Link>...</Link>
+...
+```
+
+Invoking on Expo Router
+```js
+import { Link } from 'expo-router';
+...
+return <Link>...</Link>
+...
+```
 
 | Param | Type | Required | App Router | Expo Router | Incompatibility note |
 | - | - | - | - | - | - | 
@@ -159,10 +175,10 @@ Not supported.
 
 Invoking on App Router
 ```js
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 ...
-const router = useRouter()
-router.methodName()
+const router = useRouter();
+router.methodName();
 ...
 ```
 
@@ -170,7 +186,7 @@ Invoking on Expo Router
 ```js
 import { router } from 'expo-router';
 ...
-router.methodName()
+router.methodName();
 ...
 ```
 
@@ -184,4 +200,40 @@ router.methodName()
 | `reload` | `() => void` | ✅ | ❌ | |
 | `events` | [See in the docs](https://nextjs.org/docs/pages/api-reference/functions/use-router#routerevents) | ✅ | ❌ | |
 | `setParams` | `(params: Record<string, string>) => void` | ❌ | ✅ | |
+
+### Get param(s) sent throug route
+
+Invoking on App Router
+```js
+import { useParams } from 'next/navigation'
+...
+//Route -> /route-name/[paramOne]/[paramTwo]
+const { paramOne, paramTwo } = useParams();
+...
+```
+
+```js
+'use client'
+
+import { useSearchParams } from 'next/navigation'
+...
+const searchParams = useSearchParams();
+
+//URL -> /route-name?searchParam=searchParamValueOne&searchParam=searchParamValueTwo
+const searchParamSingleValue = searchParams.get('searchParam') //-> 'searchParamValueOne'
+const searchParamAllValues = searchParams.getAll('searchParam') //-> ['searchParamValueOne', 'searchParamValueTwo']
+...
+```
+
+Invoking on Expo Router
+```js
+import { useLocalSearchParams, useGlobalSearchParams } from 'expo-router';
+...
+//Prevent the background screens re-render when params are changed
+const { paramOne, paramTwo } = useLocalSearchParams();
+
+//Made the background screens re-render when params are changed
+const { paramOne, paramTwo } = useGlobalSearchParams();
+...
+```
 
