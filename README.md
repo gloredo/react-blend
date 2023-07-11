@@ -1,73 +1,67 @@
-<p align='center'>
-    <h1 align='center'>React Universal Layer</h1>
+<p align="center">
+    <h1 align="center">React Universal Layer</h1>
 </p>
-<p align='center'>
-  <a aria-label='Join our Discord' href='' target='_blank'>
-    <img alt='Discord' src='https://img.shields.io/discord/695411232856997968.svg?style=flat-square&labelColor=000000&color=4630EB&logo=discord&logoColor=FFFFFF&label=' />
+<p align="center">
+  <a aria-label="Join our Discord" href="" target="_blank">
+    <img alt="Discord" src="https://img.shields.io/discord/695411232856997968.svg?style=flat-square&labelColor=000000&color=4630EB&logo=discord&logoColor=FFFFFF&label=" />
   </a>
-  <a aria-label='React Universal Layer is free to use' href='' target='_blank'>
-    <img alt='License: MIT' src='https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&color=33CC12' target='_blank' />
+  <a aria-label="React Universal Layer is free to use" href="" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&color=33CC12" target="_blank" />
   </a>
 </p>
 
 ---
 
-- [🚀 Goal and Guidelines](#-goal-and-guidelines)
-- [🗺 Project Layout](#-project-layout)
+- [📏 Goal and Guidelines](#-goal-and-guidelines)
+  - [Making Cross-Platform Development a Breeze](#making-cross-platform-development-a-breeze)
+  - [Staying as Close to the Original Design as Possible](#staying-as-close-to-the-original-design-as-possible)
+  - [Be Small to Always Stay Up to Date](#be-small-to-always-stay-up-to-date)
+  - [Implementation Reference Sections](#implementation-reference-sections)
 - [📚 Documentation](#-documentation)
-- [Navigation](#navigation)
   - [Roles of Folders and Files](#roles-of-folders-and-files)
     - [Root Route](#root-route)
-      - [App Router](#app-router)
-      - [Expo Router](#expo-router)
     - [Named Routes](#named-routes)
-      - [App Router](#app-router-1)
-      - [Expo Router](#expo-router-1)
     - [Nested Routes](#nested-routes)
-      - [App Router](#app-router-2)
-      - [Expo Router](#expo-router-2)
     - [Dynamic Routes with One Parameter](#dynamic-routes-with-one-parameter)
-      - [App Router](#app-router-3)
-      - [Expo Router](#expo-router-3)
     - [Dynamic Routes with Multiple Parameters](#dynamic-routes-with-multiple-parameters)
-      - [App Router](#app-router-4)
-      - [Expo Router](#expo-router-4)
     - [Route Groups](#route-groups)
-      - [App Router](#app-router-5)
-      - [Expo Router](#expo-router-5)
     - [Parallel Routes](#parallel-routes)
-      - [App Router](#app-router-6)
-      - [Expo Router](#expo-router-6)
   - [Linking and Navigating](#linking-and-navigating)
-    - [Navigation with `<Link>` component](#navigation-with-link-component)
-      - [Usage](#usage)
-        - [Basic usage](#basic-usage)
-        - [Usage with a custom component](#usage-with-a-custom-component)
-      - [API Reference](#api-reference)
-      - [Invoking on App Router](#invoking-on-app-router)
-      - [Invoking on Expo Router](#invoking-on-expo-router)
-      - [API Reference Comparasion](#api-reference-comparasion)
-      - [Integration Rules Implemented](#integration-rules-implemented)
+    - [Navigation with `<Link>` Component](#navigation-with-link-component)
     - [Imperative Navigation with `router`](#imperative-navigation-with-router)
-      - [Invoking on App Router](#invoking-on-app-router-1)
-      - [Invoking on Expo Router](#invoking-on-expo-router-1)
-      - [API Reference Comparasion](#api-reference-comparasion-1)
     - [Get Param(s) Sent Throug Route](#get-params-sent-throug-route)
-      - [Invoking on App Router](#invoking-on-app-router-2)
-      - [Invoking on Expo Router](#invoking-on-expo-router-2)
-      - [Distinction Between Path Parameters and Query Parameters](#distinction-between-path-parameters-and-query-parameters)
 - [👏 Contributing](#-contributing)
 - [⚖️ License](#️-license)
 
-## 🚀 Goal and Guidelines
+> **ATTENTION!**
+>
+> This package **does NOT support Next.js's Pages Router and React Navigation**, it only supports Next.js's App Router and Expo Router. [Read more](#be-small-to-always-stay-up-to-date).
 
-## 🗺 Project Layout
+## 📏 Goal and Guidelines
+
+The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
+
+### Making Cross-Platform Development a Breeze
+
+Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of "React Universal Apps", the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+
+### Staying as Close to the Original Design as Possible
+
+We never intend to create new features or offer APIs that are not available in both frameworks, limiting ourselves to creating types, parameters or methods if really necessary. The whole integration rule is under the hood so you don't have to learn anything new.
+
+### Be Small to Always Stay Up to Date
+
+This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to drop support for Next.js's Pages Router and React Navigation, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
+
+### Implementation Reference Sections
+
+Each section of the documentation can have a hidden section at the end called "Implementation Reference", responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
 
 ## 📚 Documentation
 
-## Navigation
-
 ### Roles of Folders and Files
+
+There is nothing new here, this section of the documentation has the sole purpose of summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
 #### Root Route
 
@@ -246,55 +240,84 @@ Not supported.
 
 ### Linking and Navigating
 
-#### Navigation with `<Link>` component
+#### Navigation with `<Link>` Component
 
 ##### Usage
 
-###### Basic usage
-
-> If `props.children` is of type `String`.
+###### Static Route with `href` as `String`
 
 ```ts
 import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
-  return (
-    <View>
-      // Static route with href as String
-      // Route -> /about
-      <Link href="/about">About</Link>
-
-      // Dynamic route with href as String
-      // Route -> /user/[username]
-      <Link href="/user/gloredo">View user</Link>
-    </View>
-  );
+  // Route -> /about
+  return <Link href="/about">About</Link>;
 }
 ```
 
-###### Usage with a custom component
-
-> If `props.children` is of type `React.ReactNode`.
+###### Dynamic Route with `href` as `String`
 
 ```ts
-import React from "react";
-import { Pressable, Text } from "react-native";
 import { Link } from "react-universal-layer/navigation";
 
-// ref need to be passed to the element for proper handling in App Router
-const MyButton = React.forwardRef((props, ref) => {
-  return (
-    <Pressable {...props} ref={ref}>
-      <Text>...</Text>
-    </Pressable>
-  );
-});
+export default function Page() {
+  // Route -> /user/[username]
+  return <Link href="/user/gloredo">View user</Link>;
+}
+```
+
+###### Static Route with `href` as `Object`
+
+```ts
+import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
   // Route -> /about
   return (
+    <Link
+      href={{
+        pathname: "/about",
+      }}
+    >
+      About
+    </Link>
+  );
+}
+```
+
+###### Dynamic Route with `href` as `Object`
+
+```ts
+import { Link } from "react-universal-layer/navigation";
+
+export default function Page() {
+  // Route -> /user/[username]
+  return (
+    <Link
+      href={{
+        pathname: "/user/[username]",
+        params: { username: "gloredo" },
+      }}
+    >
+      View user
+    </Link>
+  );
+}
+```
+
+###### Children as a Custom Component
+
+```ts
+import { Pressable, Text } from "react-native";
+import { Link } from "react-universal-layer/navigation";
+
+export default function Page() {
+  return (
+    // Route -> /about
     <Link href="/about">
-      <MyButton />
+      <Pressable>
+        <Text>About</Text>
+      </Pressable>
     </Link>
   );
 }
@@ -302,11 +325,11 @@ export default function Page() {
 
 ##### API Reference
 
-| Param      | Type                 | Required | App Router | Expo Router |
-| ---------- | -------------------- | -------- | ---------- | ----------- |
-| `href`     | `String` or `Object` | Yes      | ✅         | ✅          |
-| `replace`  | `Boolean`            | No       | ✅         | ✅          |
-| `prefetch` | `Boolean`            | No       | ✅         | ❌          |
+| Param | Type | Required | Default | App Router | Expo Router |
+| --- | --- | --- | --- | --- | --- |
+| `href` | `String` or `Object` | Yes |  | ✅ | ✅ |
+| `replace` | `Boolean` | No | `false` | ✅ | ✅ |
+| `prefetch` | `Boolean` | No | `true` | ✅ | ❌ |
 
 <details>
 
@@ -315,36 +338,9 @@ export default function Page() {
 ##### Invoking on App Router
 
 ```ts
-import Link from 'next/link';
-import styled from 'styled-components'
+import Link from "next/link";
 ...
-// onClick, href, and ref need to be passed to the DOM element for proper handling
-const MyButton = React.forwardRef(({ onClick, href }, ref) => {
-  return (
-    <a href={href} onClick={onClick} ref={ref}>...</a>
-  )
-})
-...
-// This creates a custom component that wraps an <a> tag
-const RedLink = styled.a`
-  color: red;
-`
-
-return (
-  <View>
-    <Link href={...}>...</Link>
-
-    // If the child is a custom component that wraps an <a> tag
-    <Link href={...} passHref legacyBehavior>
-      <RedLink>...</RedLink>
-    </Link>
-
-    // If the child is a functional component
-    <Link href={...} passHref legacyBehavior>
-      <MyButton />
-    </Link>
-  </View>
-);
+return <Link href={...}>...</Link>;
 ...
 ```
 
@@ -352,7 +348,7 @@ return (
 
 ```ts
 import { Pressable, Text } from "react-native";
-import { Link } from 'expo-router';
+import { Link } from "expo-router";
 ...
 return (
   <View>
@@ -377,19 +373,12 @@ return (
 | `href` | `String` or `Object` | Yes | ✅ | ✅ | Objects are different. App Router uses `object.query` and Expo Router uses `object.params`. |
 | `replace` | `Boolean` | No | ✅ | ✅ |  |
 | `prefetch` | `Boolean` | No | ✅ | ❌ |  |
-| `passHref` | `Boolean` | No | ✅ | ❌ |  |
-| `scroll` | `Boolean` | No | ✅ | ❌ |  |
-| `shallow` | `Boolean` | No | ✅ | ❌ |  |
-| `locale` | `Boolean` | No | ✅ | ❌ |  |
 | `asChild` | `Boolean` | No | ❌ | ✅ |  |
 
 ##### Integration Rules Implemented
 
 - If `typeof children === React.ReactNode`:
-  - App Router
-    - Set `passHref={true}`
-    - Set `legacyBehavior={true}`
-  - Expo Router
+  - Expo Router:
     - Set `asChild={true}`
 
 </details>
@@ -403,7 +392,7 @@ return (
 ##### Invoking on App Router
 
 ```ts
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 ...
 const router = useRouter();
 router.methodName();
@@ -413,7 +402,7 @@ router.methodName();
 ##### Invoking on Expo Router
 
 ```ts
-import { router } from 'expo-router';
+import { router } from "expo-router";
 ...
 router.methodName();
 ...
@@ -443,7 +432,7 @@ router.methodName();
 ##### Invoking on App Router
 
 ```ts
-import { useParams } from 'next/navigation'
+import { useParams } from "next/navigation"
 ...
 //Route -> /route-name/[paramOne]/[paramTwo]
 const { paramOne, paramTwo } = useParams();
@@ -451,41 +440,41 @@ const { paramOne, paramTwo } = useParams();
 ```
 
 ```ts
-'use client'
+"use client"
 
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation"
 ...
 const searchParams = useSearchParams();
 
 //URL -> /route-name?searchParam=searchParamValueOne&searchParam=searchParamValueTwo
-const searchParamSingleValue = searchParams.get('searchParam') //-> 'searchParamValueOne'
-const searchParamAllValues = searchParams.getAll('searchParam') //-> ['searchParamValueOne', 'searchParamValueTwo']
+const searchParamSingleValue = searchParams.get("searchParam") //-> "searchParamValueOne"
+const searchParamAllValues = searchParams.getAll("searchParam") //-> ["searchParamValueOne", "searchParamValueTwo"]
 ...
 ```
 
 ##### Invoking on Expo Router
 
 ```ts
-import { useLocalSearchParams, useGlobalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useGlobalSearchParams } from "expo-router";
 ...
 // <Link
 //  href={{
-//    pathname: 'route-name',
-//    params: { paramOne: 'paramOneValue', paramTwo: 'paramTwoValue' }
+//    pathname: "route-name",
+//    params: { paramOne: "paramOneValue", paramTwo: "paramTwoValue" }
 //  }}
 // >...</Link>
 //
 // OR
 //
 // <Link
-//  href='route-name?paramOne=paramOneValue&paramTwo=paramTwoValue'
+//  href="route-name?paramOne=paramOneValue&paramTwo=paramTwoValue"
 // >...</Link>
 
 //Prevent the background screens re-render when params are changed
-const { paramOne, paramTwo } = useLocalSearchParams(); //-> {paramOne: 'paramOneValue', paramTwo: 'paramTwoValue'}
+const { paramOne, paramTwo } = useLocalSearchParams(); //-> {paramOne: "paramOneValue", paramTwo: "paramTwoValue"}
 
 //Made the background screens re-render when params are changed
-const { paramOne, paramTwo } = useGlobalSearchParams(); //-> {paramOne: 'paramOneValue', paramTwo: 'paramTwoValue'}
+const { paramOne, paramTwo } = useGlobalSearchParams(); //-> {paramOne: "paramOneValue", paramTwo: "paramTwoValue"}
 ...
 ```
 
@@ -493,37 +482,37 @@ const { paramOne, paramTwo } = useGlobalSearchParams(); //-> {paramOne: 'paramOn
 
 While the App Router distinguishes the parameters between [Path Parameters](https://swagger.io/docs/specification/describing-parameters/#path-parameters) and [Query Parameters/Query String](https://swagger.io/docs/specification/describing-parameters/#query-parameters) allowing access to them through the `useParams` and `useSearchParams` hooks, Expo Router does not distinguish, bringing both parameters through the `useLocalSearchParams` and `useGlobalSearchParams` hooks.
 
-A limitation of Expo Router is that it only accepts one type of parameter per navigation call, which means that if you pass the `href.pathname` with Query Parameters and `href.params` with values, only the `href.pathname` values are accessible and `href.params` values are ignored. Let's see an example:
+A limitation of Expo Router is that it only accepts one type of parameter per navigation call, which means that if you pass the `href.pathname` with Query Parameters and `href.params` with values, only the `href.pathname` values are accessible and `href.params` values are ignored. Let"s see an example:
 
 ```ts
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from "expo-router";
 ...
 // <Link
 //  href={{
-//    pathname: 'route-name?queryParam=queryParamValue',
-//    params: { pathParam: 'pathParamValue' }
+//    pathname: "route-name?queryParam=queryParamValue",
+//    params: { pathParam: "pathParamValue" }
 //  }}
 // >...</Link>
 
-// Throw an error because pathParam doesn't exist
+// Throw an error because pathParam doesn"t exist
 const { queryParam, pathParam } = useLocalSearchParams();
 ...
 ```
 
-However, when using Dynamic Routes it works as expected. Let's see an example:
+However, when using Dynamic Routes it works as expected. Let"s see an example:
 
 ```ts
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from "expo-router";
 ...
 // <Link
 //  href={{
-//    pathname: 'route-name/[pathParam]?queryParam=queryParamValue',
-//    params: { pathParam: 'pathParamValue' }
+//    pathname: "route-name/[pathParam]?queryParam=queryParamValue",
+//    params: { pathParam: "pathParamValue" }
 //  }}
 // >...</Link>
 
 // Return both values as expected
-const { queryParam, pathParam } = useLocalSearchParams(); //-> {queryParam: 'queryParamValue', pathParam: 'pathParamValue'}
+const { queryParam, pathParam } = useLocalSearchParams(); //-> {queryParam: "queryParamValue", pathParam: "pathParamValue"}
 ...
 ```
 
