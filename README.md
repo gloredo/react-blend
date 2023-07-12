@@ -40,6 +40,51 @@
 
 ## 📍 Goal and Guidelines
 
+```mermaid
+graph LR
+
+next-specific{{Your Next.js Specific Code and Files}}
+app-router(App Router)
+next-image(Next Image Component)
+next-auth(Next Auth Package)
+
+expo-specific{{Your Expo Specific Code and Files}}
+expo-router(Expo Router)
+expo-image(Expo Image Component)
+expo-auth(Expo Auth Package)
+
+shared-code{{Your Shared Code}}
+rul-pkg[[React Universal Package]]
+rul-router(Universal Router)    
+rul-image(Universal Image Component)    
+rul-auth(Universal Auth)
+
+subgraph Next.js Layer
+next-specific 
+app-router 
+next-image 
+next-auth 
+end
+
+subgraph Expo Layer
+expo-specific 
+expo-router 
+expo-image
+expo-auth
+end
+
+subgraph Shared Layer
+shared-code -- uses --> rul-pkg 
+rul-pkg -- includes --> rul-navigator 
+rul-pkg -- includes --> rul-image 
+rul-pkg -- includes --> rul-auth 
+end
+
+app-router <-. integrates .-> rul-navigator <-. integrates .-> expo-router
+next-image <-. integrates .-> rul-image <-. integrates .-> expo-image
+next-auth <-. integrates .-> rul-auth <-. integrates .-> expo-auth
+```
+
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
 ❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work!
