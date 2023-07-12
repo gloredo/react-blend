@@ -12,11 +12,11 @@
 
 ---
 
-- [📏 Goal and Guidelines](#-goal-and-guidelines)
-  - [Making Cross-Platform Development a Breeze](#making-cross-platform-development-a-breeze)
-  - [Staying as Close to the Original Design as Possible](#staying-as-close-to-the-original-design-as-possible)
-  - [Be Small to Always Stay Up to Date](#be-small-to-always-stay-up-to-date)
-  - [Implementation Reference Sections](#implementation-reference-sections)
+- [📍 Goal and Guidelines](#-goal-and-guidelines)
+  - [🚀 Making Cross-Platform Development a Breeze](#-making-cross-platform-development-a-breeze)
+  - [🚦 Staying as Close to the Original Design as Possible](#-staying-as-close-to-the-original-design-as-possible)
+  - [📏 Be Small to Always Stay Up to Date](#-be-small-to-always-stay-up-to-date)
+  - [💡 Implementation Reference Sections](#-implementation-reference-sections)
 - [📚 Documentation](#-documentation)
   - [🗄️ Roles of Files and Folders](#️-roles-of-files-and-folders)
     - [Important Rules](#important-rules)
@@ -31,27 +31,23 @@
 - [👏 Contributing](#-contributing)
 - [⚖️ License](#️-license)
 
-> **ATTENTION!**
->
-> This package **does NOT support Next.js's Pages Router and React Navigation**, it only supports Next.js's App Router and Expo Router. [Read more](#be-small-to-always-stay-up-to-date).
-
-## 📏 Goal and Guidelines
+## 📍 Goal and Guidelines
 
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
-### Making Cross-Platform Development a Breeze
+### 🚀 Making Cross-Platform Development a Breeze
 
 Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of "React Universal Apps", the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
-### Staying as Close to the Original Design as Possible
+### 🚦 Staying as Close to the Original Design as Possible
 
 We never intend to create new features or offer APIs that are not available in both frameworks, limiting ourselves to creating types, parameters or methods if really necessary. The whole integration rule is under the hood so you don't have to learn anything new.
 
-### Be Small to Always Stay Up to Date
+### 📏 Be Small to Always Stay Up to Date
 
-This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to drop support for Next.js's Pages Router and React Navigation, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
+This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for Next.js's Pages Router and React Navigation**, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
 
-### Implementation Reference Sections
+### 💡 Implementation Reference Sections
 
 Each section of the documentation can have a hidden section at the end called "Implementation Reference", responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
 
