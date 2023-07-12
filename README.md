@@ -19,9 +19,9 @@
   - [Implementation Reference Sections](#implementation-reference-sections)
 - [📚 Documentation](#-documentation)
   - [Roles of Files and Folders](#roles-of-files-and-folders)
-    - [Important rules](#important-rules)
-    - [Files](#files)
-    - [Folders](#folders)
+    - [Important Rules](#important-rules)
+    - [Files Roles](#files-roles)
+    - [Folders Roles](#folders-roles)
   - [Linking and Navigating](#linking-and-navigating)
     - [Navigation with `<Link>` Component](#navigation-with-link-component)
     - [Imperative Navigation with `router`](#imperative-navigation-with-router)
@@ -62,7 +62,7 @@ There is nothing new here, this section of the documentation has the sole purpos
 - Role supported for the framework -> ✅
 - Role not supported for the framework -> ❌
 
-#### Important rules
+#### Important Rules
 
 ##### App Router Requires a Root Layout
 
@@ -70,7 +70,7 @@ App Router requires a root `📄 layout.js` defined in `📁 app`. Expo Router d
 
 ##### Using Your Own Files Inside Routers
 
-#### Files
+#### Files Roles
 
 ##### Page File
 
@@ -88,7 +88,7 @@ App Router requires a root `📄 layout.js` defined in `📁 app`. Expo Router d
 
 ##### Default File
 
-#### Folders
+#### Folders Roles
 
 ##### Root Route
 
