@@ -18,14 +18,16 @@
   - [Be Small to Always Stay Up to Date](#be-small-to-always-stay-up-to-date)
   - [Implementation Reference Sections](#implementation-reference-sections)
 - [📚 Documentation](#-documentation)
-  - [Roles of Files and Folders](#roles-of-files-and-folders)
+  - [🗄️ Roles of Files and Folders](#️-roles-of-files-and-folders)
     - [Important Rules](#important-rules)
     - [Files Roles](#files-roles)
     - [Folders Roles](#folders-roles)
-  - [Linking and Navigating](#linking-and-navigating)
+  - [⛖ Linking and Navigating](#-linking-and-navigating)
     - [Navigation with `<Link>` Component](#navigation-with-link-component)
     - [Imperative Navigation with `router`](#imperative-navigation-with-router)
     - [Get Param(s) Sent Throug Route](#get-params-sent-throug-route)
+  - [🖼️ `<Image />` Component](#️-image--component)
+  - [🔑 Authentication](#-authentication)
 - [👏 Contributing](#-contributing)
 - [⚖️ License](#️-license)
 
@@ -55,7 +57,7 @@ Each section of the documentation can have a hidden section at the end called "I
 
 ## 📚 Documentation
 
-### Roles of Files and Folders
+### 🗄️ Roles of Files and Folders
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
@@ -315,7 +317,7 @@ Allows the same URL to be rendered with different layouts through the use of Rou
         ├── 📄 [param].js
 ```
 
-Duplication can be reduced using Array Sintax:
+Duplication can be reduced using Array Syntax:
 
 ```
 ├── 📁 app
@@ -330,7 +332,7 @@ Duplication can be reduced using Array Sintax:
 
 ###### ✅ Expo Router
 
-### Linking and Navigating
+### ⛖ Linking and Navigating
 
 #### Navigation with `<Link>` Component
 
@@ -609,6 +611,10 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> {queryParam: "que
 ```
 
 </details>
+
+### 🖼️ `<Image />` Component
+
+### 🔑 Authentication
 
 ## 👏 Contributing
 
