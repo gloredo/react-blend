@@ -75,12 +75,12 @@ end
 
 subgraph Shared Layer
 shared-code -- uses --> rul-pkg 
-rul-pkg -- includes --> rul-navigator 
+rul-pkg -- includes --> rul-router 
 rul-pkg -- includes --> rul-image 
 rul-pkg -- includes --> rul-auth 
 end
 
-app-router <-. integrates .-> rul-navigator <-. integrates .-> expo-router
+app-router <-. integrates .-> rul-router <-. integrates .-> expo-router
 next-image <-. integrates .-> rul-image <-. integrates .-> expo-image
 next-auth <-. integrates .-> rul-auth <-. integrates .-> expo-auth
 ```
