@@ -85,9 +85,9 @@ subgraph Shared Layer
     end 
 end
 
-app-router <-. integrates .-> rul-router <-. integrates .-> expo-router
-next-image <-. integrates .-> rul-image <-. integrates .-> expo-image
-next-auth <-. integrates .-> rul-auth <-. integrates .-> expo-auth
+app-router -. integrates .- rul-router -. integrates .- expo-router
+next-image -. integrates .- rul-image -. integrates .- expo-image
+next-auth -. integrates .- rul-auth -. integrates .- expo-auth
 ```
 
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
