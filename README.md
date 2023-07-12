@@ -54,30 +54,31 @@ expo-image(Expo Image Component)
 expo-auth(Expo Auth Package)
 
 shared-code{{Your Shared Code}}
-rul-pkg[[React Universal Package]]
 rul-router(Universal Router)    
 rul-image(Universal Image Component)    
 rul-auth(Universal Auth)
 
 subgraph Next.js Layer
-next-specific 
-app-router 
-next-image 
-next-auth 
+    next-specific 
+    app-router 
+    next-image 
+    next-auth 
 end
 
 subgraph Expo Layer
-expo-specific 
-expo-router 
-expo-image
-expo-auth
+    expo-specific 
+    expo-router 
+    expo-image
+    expo-auth
 end
 
 subgraph Shared Layer
-shared-code -- uses --> rul-pkg 
-rul-pkg -- includes --> rul-router 
-rul-pkg -- includes --> rul-image 
-rul-pkg -- includes --> rul-auth 
+    shared-code
+    subgraph React Universal Layer
+        rul-router 
+        rul-image 
+        rul-auth
+    end 
 end
 
 app-router <-. integrates .-> rul-router <-. integrates .-> expo-router
