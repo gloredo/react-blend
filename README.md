@@ -85,7 +85,7 @@ subgraph Shared Layer
     end 
 end
 
-app-router <-. integrates .-> rul-router <-. integrates .-> app-router
+app-router <-. integrates .-> rul-router <-. integrates .-> expo-router
 next-image <-. integrates .-> rul-image <-. integrates .-> expo-image
 next-auth <-. integrates .-> rul-auth <-. integrates .-> expo-auth
 ```
