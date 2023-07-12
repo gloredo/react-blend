@@ -59,8 +59,8 @@ Each section of the documentation can have a hidden section at the end called "I
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
-> - Role supported for the framework -> ✅
-> - Role not supported for the framework -> ❌
+- Role supported for the framework -> ✅
+- Role not supported for the framework -> ❌
 
 #### Important rules
 
