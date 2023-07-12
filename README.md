@@ -18,14 +18,10 @@
   - [Be Small to Always Stay Up to Date](#be-small-to-always-stay-up-to-date)
   - [Implementation Reference Sections](#implementation-reference-sections)
 - [📚 Documentation](#-documentation)
-  - [Roles of Folders and Files](#roles-of-folders-and-files)
-    - [Root Route](#root-route)
-    - [Named Routes](#named-routes)
-    - [Nested Routes](#nested-routes)
-    - [Dynamic Routes with One Parameter](#dynamic-routes-with-one-parameter)
-    - [Dynamic Routes with Multiple Parameters](#dynamic-routes-with-multiple-parameters)
-    - [Route Groups](#route-groups)
-    - [Parallel Routes](#parallel-routes)
+  - [Roles of Files and Folders](#roles-of-files-and-folders)
+    - [Important rules](#important-rules)
+    - [Files](#files)
+    - [Folders](#folders)
   - [Linking and Navigating](#linking-and-navigating)
     - [Navigation with `<Link>` Component](#navigation-with-link-component)
     - [Imperative Navigation with `router`](#imperative-navigation-with-router)
@@ -59,41 +55,74 @@ Each section of the documentation can have a hidden section at the end called "I
 
 ## 📚 Documentation
 
-### Roles of Folders and Files
+### Roles of Files and Folders
 
-There is nothing new here, this section of the documentation has the sole purpose of summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
+There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
-#### Root Route
+#### Important rules
+
+##### App Router Requires a Root Layout
+
+App Router requires a root `📄 layout.js` defined in `📁 app`. Expo Router does not require.
+
+##### Using Your Own Files Inside Routers
+
+> - Role supported for the framework -> ✅
+> - Role not supported for the framework -> ❌
+
+#### Files
+
+##### Page File
+
+##### Layout File
+
+##### Loading File
+
+##### Not Found File
+
+##### Error File
+
+##### Global Error File
+
+##### Template File
+
+##### Default File
+
+#### Folders
+
+##### Root Route
 
 Matches route `/`.
 
-##### App Router
+###### ✅ App Router
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
     ├── 📄 page.js
 ```
 
-##### Expo Router
+###### ✅ Expo Router
 
 ```
 ├── 📁 app
     ├── 📄 index.js
 ```
 
-#### Named Routes
+##### Named Routes
 
 Matches route `/route-name`.
 
-##### App Router
+###### ✅ App Router
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
     ├── 📁 route-name
         ├── 📄 page.js
 ```
 
-##### Expo Router
+###### ✅ Expo Router
 
 ```
 ├── 📁 app
@@ -106,20 +135,21 @@ Matches route `/route-name`.
         ├── 📄 index.js
 ```
 
-#### Nested Routes
+##### Nested Routes
 
 Matches route `/parent-route-name/child-route-name`.
 
-##### App Router
+###### ✅ App Router
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
     ├── 📁 parent-route-name
         ├── 📁 child-route-name
             ├── 📄 page.js
 ```
 
-##### Expo Router
+###### ✅ Expo Router
 
 ```
 ├── 📁 app
@@ -134,20 +164,21 @@ Matches route `/parent-route-name/child-route-name`.
             ├── 📄 index.js
 ```
 
-#### Dynamic Routes with One Parameter
+##### Dynamic Routes with One Parameter
 
-Matches route `/route-name/[param]` where `[param]` is a single value sent by the route.
+Matches route `/route-name/[param]` where `📁 [param]` is a single value sent by the route.
 
-##### App Router
+###### ✅ App Router
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
     ├── 📁 route-name
         ├── 📁 [param]
             ├── 📄 page.js
 ```
 
-##### Expo Router
+###### ✅ Expo Router
 
 ```
 ├── 📁 app
@@ -162,20 +193,21 @@ Matches route `/route-name/[param]` where `[param]` is a single value sent by th
             ├── 📄 index.js
 ```
 
-#### Dynamic Routes with Multiple Parameters
+##### Dynamic Routes with Multiple Parameters
 
-Matches route `/route-name/[...params]` where `[...params]` is a array of values sent by the route.
+Matches route `/route-name/[...params]` where `📁 [...params]` is a array of values sent by the route.
 
-##### App Router
+###### ✅ App Router
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
     ├── 📁 route-name
         ├── 📁 [...params]
             ├── 📄 page.js
 ```
 
-##### Expo Router
+###### ✅ Expo Router
 
 ```
 ├── 📁 app
@@ -190,20 +222,21 @@ Matches route `/route-name/[...params]` where `[...params]` is a array of values
             ├── 📄 index.js
 ```
 
-#### Route Groups
+##### Route Groups
 
 Matches route `/route-name`.
 
-##### App Router
+###### ✅ App Router
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
     ├── 📁 (group-name)
         ├── 📁 route-name
             ├── 📄 page.js
 ```
 
-##### Expo Router
+###### ✅ Expo Router
 
 ```
 ├── 📁 app
@@ -218,25 +251,84 @@ Matches route `/route-name`.
             ├── 📄 index.js
 ```
 
-#### Parallel Routes
+##### Parallel Routes
 
-Matches route `/`.
+###### ❌ Expo Router
 
-##### App Router
+###### ✅ App Router
+
+Matches route `/`. The `📄 page.js` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.js` via `props`.
 
 ```
 ├── 📁 app
+    ├── 📄 layout.js
+    ├── 📄 page.js
     ├── 📁 @parallel-route-one
         ├── 📄 page.js
     ├── 📁 @parallel-route-two
         ├── 📄 page.js
-    ├── 📄 layout.js
-    ├── 📄 page.js
 ```
 
-##### Expo Router
+##### Intercepting Routes
 
-Not supported.
+###### ❌ Expo Router
+
+###### ✅ App Router
+
+When navigating to `/intercepting-route-name/paramValue` within `/route-name` this route will be intercepted and the URL updated to `/intercepting-route-name/paramValue`, however when this URL is shared the level context defined by convention will be maintained. It can be combined with Parallel Routes to obtain an excellent pattern for modals.
+
+- Convention:
+  - `(.)` matchs segments on the same level
+  - `(..)` matchs segments one level above
+  - `(..)(..)` matchs segments two levels above
+  - `(...)` matchs segments from the root app directory
+
+```
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📁 (..)intercepting-route-name
+            ├── 📁 [param]
+                ├── 📄 page.js
+    ├── 📁 intercepting-route-name
+        ├── 📁 [param]
+            ├── 📄 page.js
+```
+
+##### Shared Routes
+
+###### ❌ App Router
+
+###### ✅ Expo Router
+
+Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].js`: `/(group-name-one)/[param].js`, `/(group-name-two)/[param].js` and `/(group-name-three)/[param].js`.
+
+```
+├── 📁 app
+    ├── 📁 (group-name-one)
+        ├── 📄 _layout.js
+        ├── 📄 [param].js
+    ├── 📁 (group-name-two)
+        ├── 📄 _layout.js
+        ├── 📄 [param].js
+    ├── 📁 (group-name-three)
+        ├── 📄 _layout.js
+        ├── 📄 [param].js
+```
+
+Duplication can be reduced using Array Sintax:
+
+```
+├── 📁 app
+    ├── 📁 (group-name-one, group-name-two, group-name-three)
+        ├── 📄 _layout.js
+        ├── 📄 [param].js
+```
+
+##### Async Routes
+
+###### ❌ App Router
+
+###### ✅ Expo Router
 
 ### Linking and Navigating
 
