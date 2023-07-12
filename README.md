@@ -46,12 +46,12 @@ graph LR
 next-specific{{Your Next.js Specific Code and Files}}
 app-router(App Router)
 next-image(Next Image Component)
-next-auth(Next Auth Package)
+next-auth(Next Auth)
 
 expo-specific{{Your Expo Specific Code and Files}}
 expo-router(Expo Router)
 expo-image(Expo Image Component)
-expo-auth(Expo Auth Package)
+expo-auth(Expo Auth)
 
 shared-code{{Your Shared Code}}
 rul-router(Universal Router)    
@@ -59,17 +59,21 @@ rul-image(Universal Image Component)
 rul-auth(Universal Auth)
 
 subgraph Next.js Layer
-    next-specific 
-    app-router 
-    next-image 
-    next-auth 
+    next-specific
+    subgraph Next.js Packages
+        app-router 
+        next-image 
+        next-auth
+    end
 end
 
 subgraph Expo Layer
-    expo-specific 
-    expo-router 
-    expo-image
-    expo-auth
+    expo-specific
+    subgraph Expo Packages
+        expo-router 
+        expo-image
+        expo-auth
+    end
 end
 
 subgraph Shared Layer
