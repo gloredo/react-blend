@@ -1,25 +1,28 @@
-<p align="center">
-    <h1 align="center">React Universal Layer</h1>
+<p align='center'>
+    <h1 align='center'>React Universal Layer</h1>
 </p>
-<p align="center">
-  <a aria-label="Join our Discord" href="" target="_blank">
-    <img alt="Discord" src="https://img.shields.io/discord/695411232856997968.svg?style=flat-square&labelColor=000000&color=4630EB&logo=discord&logoColor=FFFFFF&label=" />
+<p align='center'>
+  <a aria-label='Join our Discord' href='' target='_blank'>
+    <img alt='Discord' src='https://img.shields.io/discord/695411232856997968.svg?style=flat-square&labelColor=000000&color=4630EB&logo=discord&logoColor=FFFFFF&label=' />
   </a>
-  <a aria-label="React Universal Layer is free to use" href="" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&color=33CC12" target="_blank" />
+  <a aria-label='React Universal Layer is free to use' href='' target='_blank'>
+    <img alt='License: MIT' src='https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&color=33CC12' target='_blank' />
   </a>
 </p>
 
 ---
 
 - [📍 Goal and Guidelines](#-goal-and-guidelines)
-  - [🚀 Making Cross-Platform Development a Breeze](#-making-cross-platform-development-a-breeze)
+  - [🍃 Making Cross-Platform Development a Breeze](#-making-cross-platform-development-a-breeze)
+  - [🏁 Be the Starting Point for New Projects](#-be-the-starting-point-for-new-projects)
   - [🚦 Staying as Close to the Original Design as Possible](#-staying-as-close-to-the-original-design-as-possible)
   - [📏 Be Small to Always Stay Up to Date](#-be-small-to-always-stay-up-to-date)
+  - [🌐 Using Next.js as the Only Web Technology](#-using-nextjs-as-the-only-web-technology)
   - [💡 Implementation Reference Sections](#-implementation-reference-sections)
-- [🟢 Get start](#-get-start)
-  - [Create a Preconfigured Project with Examples](#create-a-preconfigured-project-with-examples)
-  - [Install on Your Project](#install-on-your-project)
+- [🚀 Getting Started](#-getting-started)
+  - [Creating a Minimal App](#creating-a-minimal-app)
+  - [🌟 Creating a Batteries Included App](#-creating-a-batteries-included-app)
+  - [Installing on Your Existing App](#installing-on-your-existing-app)
 - [📚 Documentation](#-documentation)
   - [Instalation](#instalation)
   - [🗄️ Roles of Files and Folders](#️-roles-of-files-and-folders)
@@ -39,9 +42,15 @@
 
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
-### 🚀 Making Cross-Platform Development a Breeze
+❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work!
 
-Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of "React Universal Apps", the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+### 🍃 Making Cross-Platform Development a Breeze
+
+Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+
+### 🏁 Be the Starting Point for New Projects
+
+Integrating React Native Layer into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with [Tamagui](https://tamagui.dev/), [TanStack Query](https://tanstack.com/query/latest), [Zustand](https://zustand-demo.pmnd.rs/), [React Native MMKV](https://github.com/mrousavy/react-native-mmkv) and [ESLint](https://eslint.org/).
 
 ### 🚦 Staying as Close to the Original Design as Possible
 
@@ -51,15 +60,41 @@ We never intend to create new features or offer APIs that are not available in b
 
 This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for Next.js's Pages Router and React Navigation**, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
 
+### 🌐 Using Next.js as the Only Web Technology
+
+Despite being often seen as a framework for hybrid mobile development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on native, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
+
 ### 💡 Implementation Reference Sections
 
-Each section of the documentation can have a hidden section at the end called "Implementation Reference", responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
+Each section of the documentation can have a hidden section at the end called 'Implementation Reference', responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
 
-## 🟢 Get start
+## 🚀 Getting Started
 
-### Create a Preconfigured Project with Examples
+### Creating a Minimal App
 
-### Install on Your Project
+```shell
+npx create-universal-layer-app@latest
+```
+
+### 🌟 Creating a Batteries Included App
+
+```shell
+npx create-universal-layer-app@latest --template with-batteries-included
+```
+
+### Installing on Your Existing App
+
+###### npm
+
+```shell
+npm install react-universal-layer@latest
+```
+
+###### yarn
+
+```shell
+yarn add react-universal-layer@latest
+```
 
 ## 📚 Documentation
 
@@ -69,8 +104,8 @@ Each section of the documentation can have a hidden section at the end called "I
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
-- Role supported for the framework -> ✅
-- Role not supported for the framework -> ❌
+- ✅ Role supported for the framework.
+- ❌ Role not supported for the framework.
 
 #### Important Rules
 
@@ -174,7 +209,7 @@ Matches route `/parent-route-name/child-route-name`.
             ├── 📄 index.js
 ```
 
-##### Dynamic Routes with One Parameter
+##### Dynamic Route with One Parameter
 
 Matches route `/route-name/[param]` where `📁 [param]` is a single value sent by the route.
 
@@ -203,11 +238,13 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
             ├── 📄 index.js
 ```
 
-##### Dynamic Routes with Multiple Parameters
+##### Dynamic Route with Multiple Parameters
 
 Matches route `/route-name/[...params]` where `📁 [...params]` is a array of values sent by the route.
 
 ###### ✅ App Router
+
+Navigating to `/route-name` throws an error. To get this behavior you need to use [Multiple Optional Parameters](#dynamic-route-with-multiple-optional-parameters).
 
 ```
 ├── 📁 app
@@ -218,6 +255,39 @@ Matches route `/route-name/[...params]` where `📁 [...params]` is a array of v
 ```
 
 ###### ✅ Expo Router
+
+```
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📄 [...params].js
+```
+
+```
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📁 [...params]
+            ├── 📄 index.js
+```
+
+##### Dynamic Route with Multiple Optional Parameters
+
+Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array of values sent by the route or nothing (`/route-name`).
+
+###### ✅ App Router
+
+```
+├── 📁 app
+    ├── 📄 layout.js
+    ├── 📁 route-name
+        ├── 📁 [[...params]]
+            ├── 📄 page.js
+```
+
+###### ✅ Expo Router
+
+<!-- TODO: Try navigate to '/route-name'  -->
+
+In Expo Router Multiple Parameters are optional by default.
 
 ```
 ├── 📁 app
@@ -334,12 +404,6 @@ Duplication can be reduced using Array Syntax:
         ├── 📄 [param].js
 ```
 
-##### Async Routes
-
-###### ❌ App Router
-
-###### ✅ Expo Router
-
 ### ⛖ Linking and Navigating
 
 #### Navigation with `<Link>` Component
@@ -348,7 +412,7 @@ Duplication can be reduced using Array Syntax:
 
 ###### Static Route with `href` as `String`
 
-```ts
+```tsx
 import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
@@ -359,7 +423,7 @@ export default function Page() {
 
 ###### Dynamic Route with `href` as `String`
 
-```ts
+```tsx
 import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
@@ -370,7 +434,7 @@ export default function Page() {
 
 ###### Static Route with `href` as `Object`
 
-```ts
+```tsx
 import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
@@ -389,7 +453,7 @@ export default function Page() {
 
 ###### Dynamic Route with `href` as `Object`
 
-```ts
+```tsx
 import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
@@ -409,13 +473,13 @@ export default function Page() {
 
 ###### Children as a Custom Component
 
-```ts
+```tsx
 import { Pressable, Text } from "react-native";
 import { Link } from "react-universal-layer/navigation";
 
 export default function Page() {
+  // Route -> /about
   return (
-    // Route -> /about
     <Link href="/about">
       <Pressable>
         <Text>About</Text>
@@ -439,8 +503,8 @@ export default function Page() {
 
 ##### Invoking on App Router
 
-```ts
-import Link from "next/link";
+```tsx
+import Link from 'next/link';
 ...
 return <Link href={...}>...</Link>;
 ...
@@ -448,17 +512,17 @@ return <Link href={...}>...</Link>;
 
 ##### Invoking on Expo Router
 
-```ts
-import { Pressable, Text } from "react-native";
-import { Link } from "expo-router";
+```tsx
+import { Pressable, Text } from 'react-native';
+import { Link } from 'expo-router';
 ...
+// If the child is a custom component.
+// The child component must support the onPress and onClick props, href and accessibilityRole will also be passed down.
 return (
   <View>
     <Link href={...}>...</Link>
 
-    // If the child is a custom component
     <Link href={...} asChild>
-      // The child component must support the onPress and onClick props, href and accessibilityRole will also be passed down
       <Pressable>
         <Text>...</Text>
       </Pressable>
@@ -493,8 +557,8 @@ return (
 
 ##### Invoking on App Router
 
-```ts
-import { useRouter } from "next/router";
+```tsx
+import { useRouter } from 'next/router';
 ...
 const router = useRouter();
 router.methodName();
@@ -503,8 +567,8 @@ router.methodName();
 
 ##### Invoking on Expo Router
 
-```ts
-import { router } from "expo-router";
+```tsx
+import { router } from 'expo-router';
 ...
 router.methodName();
 ...
@@ -533,50 +597,76 @@ router.methodName();
 
 ##### Invoking on App Router
 
-```ts
-import { useParams } from "next/navigation"
+```tsx
+import Link from 'next/link'
 ...
-//Route -> /route-name/[paramOne]/[paramTwo]
-const { paramOne, paramTwo } = useParams();
+return <Link
+  href={{
+    pathname: '/route-name/[paramOne]/[paramTwo]',
+    query: { paramOne: 'paramOneValue', paramTwo: 'paramTwoValue' },
+  }}
+>...</Link>;
+...
+import { useParams } from 'next/navigation'
+...
+//URL -> /route-name/paramOneValue/paramTwoValue
+const { paramOne, paramTwo } = useParams(); //-> { paramOne: 'paramOneValue', paramTwo: 'paramTwoValue' }
 ...
 ```
 
-```ts
-"use client"
+```tsx
+import Link from 'next/link'
+...
+return <Link
+ href='/route-name?searchParam=searchParamValueOne&searchParam=searchParamValueTwo'
+>...</Link>;
 
-import { useSearchParams } from "next/navigation"
+// OR
+
+return <Link
+  href={{
+    pathname: '/route-name',
+    query: { searchParam: ['searchParamValueOne', 'searchParamValueTwo'] },
+  }}
+>...</Link>;
+...
+'use client'
+
+import { useSearchParams } from 'next/navigation'
 ...
 const searchParams = useSearchParams();
 
 //URL -> /route-name?searchParam=searchParamValueOne&searchParam=searchParamValueTwo
-const searchParamSingleValue = searchParams.get("searchParam") //-> "searchParamValueOne"
-const searchParamAllValues = searchParams.getAll("searchParam") //-> ["searchParamValueOne", "searchParamValueTwo"]
+const searchParamSingleValue = searchParams.get('searchParam') //-> 'searchParamValueOne'
+const searchParamAllValues = searchParams.getAll('searchParam') //-> ['searchParamValueOne', 'searchParamValueTwo']
 ...
 ```
 
 ##### Invoking on Expo Router
 
-```ts
-import { useLocalSearchParams, useGlobalSearchParams } from "expo-router";
+```tsx
+import { Link } from 'expo-router';
 ...
-// <Link
-//  href={{
-//    pathname: "route-name",
-//    params: { paramOne: "paramOneValue", paramTwo: "paramTwoValue" }
-//  }}
-// >...</Link>
-//
-// OR
-//
-// <Link
-//  href="route-name?paramOne=paramOneValue&paramTwo=paramTwoValue"
-// >...</Link>
+return <Link
+ href={{
+   pathname: 'route-name',
+   params: { paramOne: 'paramOneValue', paramTwo: 'paramTwoValue' }
+ }}
+>...</Link>;
 
+// OR
+
+return <Link
+ href='route-name?paramOne=paramOneValue&paramTwo=paramTwoValue'
+>...</Link>;
+...
+import { useLocalSearchParams, useGlobalSearchParams } from 'expo-router';
+...
 //Prevent the background screens re-render when params are changed
-const { paramOne, paramTwo } = useLocalSearchParams(); //-> {paramOne: "paramOneValue", paramTwo: "paramTwoValue"}
+const { paramOne, paramTwo } = useLocalSearchParams(); //-> { paramOne: 'paramOneValue', paramTwo: 'paramTwoValue' }
 
 //Made the background screens re-render when params are changed
-const { paramOne, paramTwo } = useGlobalSearchParams(); //-> {paramOne: "paramOneValue", paramTwo: "paramTwoValue"}
+const { paramOne, paramTwo } = useGlobalSearchParams(); //-> { paramOne: 'paramOneValue', paramTwo: 'paramTwoValue' }
 ...
 ```
 
@@ -584,37 +674,41 @@ const { paramOne, paramTwo } = useGlobalSearchParams(); //-> {paramOne: "paramOn
 
 While the App Router distinguishes the parameters between [Path Parameters](https://swagger.io/docs/specification/describing-parameters/#path-parameters) and [Query Parameters/Query String](https://swagger.io/docs/specification/describing-parameters/#query-parameters) allowing access to them through the `useParams` and `useSearchParams` hooks, Expo Router does not distinguish, bringing both parameters through the `useLocalSearchParams` and `useGlobalSearchParams` hooks.
 
-A limitation of Expo Router is that it only accepts one type of parameter per navigation call, which means that if you pass the `href.pathname` with Query Parameters and `href.params` with values, only the `href.pathname` values are accessible and `href.params` values are ignored. Let"s see an example:
+A limitation of Expo Router is that it only accepts one type of parameter per navigation call on static routes, which means that if you pass the `href.pathname` with Query Parameters and `href.params` with values, only the `href.pathname` values are accessible and `href.params` values are ignored. Let's see an example:
 
-```ts
-import { useLocalSearchParams } from "expo-router";
+```tsx
+import { Link } from 'expo-router';
 ...
-// <Link
-//  href={{
-//    pathname: "route-name?queryParam=queryParamValue",
-//    params: { pathParam: "pathParamValue" }
-//  }}
-// >...</Link>
-
-// Throw an error because pathParam doesn"t exist
+return <Link
+ href={{
+   pathname: 'route-name?queryParam=queryParamValue',
+   params: { pathParam: 'pathParamValue' }
+ }}
+>...</Link>;
+...
+import { useLocalSearchParams } from 'expo-router';
+...
+// Throw an error because pathParam doesn't exist
 const { queryParam, pathParam } = useLocalSearchParams();
 ...
 ```
 
-However, when using Dynamic Routes it works as expected. Let"s see an example:
+However, when using Dynamic Routes it works as expected. Let's see an example:
 
-```ts
-import { useLocalSearchParams } from "expo-router";
+```tsx
+import { Link } from 'expo-router';
 ...
-// <Link
-//  href={{
-//    pathname: "route-name/[pathParam]?queryParam=queryParamValue",
-//    params: { pathParam: "pathParamValue" }
-//  }}
-// >...</Link>
-
+<Link
+ href={{
+   pathname: 'route-name/[pathParam]?queryParam=queryParamValue',
+   params: { pathParam: 'pathParamValue' }
+ }}
+>...</Link>
+...
+import { useLocalSearchParams } from 'expo-router';
+...
 // Return both values as expected
-const { queryParam, pathParam } = useLocalSearchParams(); //-> {queryParam: "queryParamValue", pathParam: "pathParamValue"}
+const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'queryParamValue', pathParam: 'pathParamValue' }
 ...
 ```
 
