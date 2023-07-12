@@ -17,7 +17,11 @@
   - [🚦 Staying as Close to the Original Design as Possible](#-staying-as-close-to-the-original-design-as-possible)
   - [📏 Be Small to Always Stay Up to Date](#-be-small-to-always-stay-up-to-date)
   - [💡 Implementation Reference Sections](#-implementation-reference-sections)
+- [🟢 Get start](#-get-start)
+  - [Create a Preconfigured Project with Examples](#create-a-preconfigured-project-with-examples)
+  - [Install on Your Project](#install-on-your-project)
 - [📚 Documentation](#-documentation)
+  - [Instalation](#instalation)
   - [🗄️ Roles of Files and Folders](#️-roles-of-files-and-folders)
     - [Important Rules](#important-rules)
     - [Files Roles](#files-roles)
@@ -51,7 +55,15 @@ This project needs to be always up to date to work properly, so keeping things s
 
 Each section of the documentation can have a hidden section at the end called "Implementation Reference", responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
 
+## 🟢 Get start
+
+### Create a Preconfigured Project with Examples
+
+### Install on Your Project
+
 ## 📚 Documentation
+
+### Instalation
 
 ### 🗄️ Roles of Files and Folders
 
