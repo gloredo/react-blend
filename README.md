@@ -21,7 +21,7 @@
 
 ## :world_map: Project Layout
 
-This repository is a monorepo that contains three main projects.
+This repository is a monorepo that contains three main projects and a sandbox folder to use during development.
 
 - `📄 README.md`: Project overview.
 - 📁 [lib](/lib/): Library project.
@@ -36,6 +36,9 @@ This repository is a monorepo that contains three main projects.
 - 📁 [vscode-extension](/vscode-extension/): Visual Studio Code Extension project.
   - `📄 README.md`: Visual Studio Code Extension documentation.
   - `📁 src`: All Visual Studio Code Extension documentation code.
+- 📁 [sandbox](/sandbox/): Development Testing Environment.
+  - `📁 next`: Next.js minimal project with **React Universal Layer**.
+  - `📁 expo`: Expo minimal project with **React Universal Layer**.
 
 ## :dart: Goal and Guidelines
 

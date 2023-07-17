@@ -1,0 +1,16 @@
+{
+  "name": "react-universal-layer",
+  "version": "0.1.0",
+  "description": "A thin integration layer between Next.js and Expo",
+  "repository": "git@github.com:gloredo/react-universal-layer.git",
+  "author": "Giovane de Loredo <gloredo@pm.me>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "cli",
+      "lib",
+      "vscode-extension"
+    ]
+  }
+}
