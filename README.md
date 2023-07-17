@@ -112,12 +112,12 @@ subgraph Shared Layer
     end
 end
 
-app-router -. integrates .- rul-router -. integrates .- expo-router
-next-image -. integrates .- rul-image -. integrates .- expo-image
-next-auth -. integrates .- rul-auth -. integrates .- expo-auth
-next-i18n -. integrates .- rul-internationalization -. integrates .- expo-localization
-rul-internationalization -. integrates .- i18n-js
-workbox -. integrates .- rul-persistence -. integrates .- rn-mmkv
+app-router -.- rul-router -.- expo-router
+next-image -.- rul-image -.- expo-image
+next-auth -.- rul-auth -.- expo-auth
+next-i18n -.- rul-internationalization -.- expo-localization
+rul-internationalization -.- i18n-js
+workbox -.- rul-persistence -.- rn-mmkv
 ```
 
 ### :leaves: Making React Cross-Platform Development a Breeze
