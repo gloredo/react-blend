@@ -17,11 +17,11 @@
   - [:checkered_flag: Be the Starting Point for New Projects](#checkered_flag-be-the-starting-point-for-new-projects)
   - [:vertical_traffic_light: Staying as Close to the Original Design as Possible](#vertical_traffic_light-staying-as-close-to-the-original-design-as-possible)
   - [:straight_ruler: Be Small to Always Stay Up to Date](#straight_ruler-be-small-to-always-stay-up-to-date)
-  - [:globe_with_meridians: Using Next.js as the Only Web Technology](#globe_with_meridians-using-nextjs-as-the-only-web-technology)
+  - [:arrow_up_down: Using Next.js as the Only Web Technology](#arrow_up_down-using-nextjs-as-the-only-web-technology)
   - [:bulb: Implementation Reference Sections](#bulb-implementation-reference-sections)
 - [:rocket: Getting Started](#rocket-getting-started)
   - [Creating a Minimal App](#creating-a-minimal-app)
-  - [:star: Creating a Batteries Included App](#star-creating-a-batteries-included-app)
+  - [:battery: Creating a Batteries Included App](#battery-creating-a-batteries-included-app)
   - [Installing on Your Existing App](#installing-on-your-existing-app)
 - [:books: Documentation](#books-documentation)
   - [:file_cabinet: Roles of Files and Folders](#file_cabinet-roles-of-files-and-folders)
@@ -34,6 +34,8 @@
     - [Get Param(s) Sent Throug Route](#get-params-sent-throug-route)
   - [:framed_picture: `<Image />` Component](#framed_picture-image--component)
   - [:key: Authentication](#key-authentication)
+  - [:globe_with_meridians: Internationalization](#globe_with_meridians-internationalization)
+  - [:floppy_disk: Persistence](#floppy_disk-persistence)
 - [:clap: Contributing](#clap-contributing)
 - [:balance_scale: License](#balance_scale-license)
 
@@ -56,26 +58,35 @@ graph LR
 
 next-specific{{Your Next.js Specific Code and Files}}
 app-router(App Router)
-next-image(Next Image Component)
+next-image(Next Image)
 next-auth(Next Auth)
+next-i18n(Next Internationalization Routing)
+workbox(Workbox)
 
 expo-specific{{Your Expo Specific Code and Files}}
 expo-router(Expo Router)
-expo-image(Expo Image Component)
+expo-image(Expo Image)
 expo-auth(Expo Auth)
+expo-localization(Expo Localization)
+i18n-js(i18n.js)
+rn-mmkv(React Native MMKV)
 
 shared-code{{Your Shared Code}}
 rul-router(Universal Router)
-rul-image(Universal Image Component)
+rul-image(Universal Image)
 rul-auth(Universal Auth)
+rul-internationalization(Universal Internationalization)
+rul-persistence(Universal Persistence)
 
 subgraph Next.js Layer
     next-specific
     subgraph Next.js Packages
         app-router
         next-image
-        next-auth
+        next-i18n
     end
+    next-auth
+    workbox
 end
 
 subgraph Expo Layer
@@ -84,7 +95,10 @@ subgraph Expo Layer
         expo-router
         expo-image
         expo-auth
+        expo-localization
     end
+    i18n-js
+    rn-mmkv
 end
 
 subgraph Shared Layer
@@ -93,12 +107,17 @@ subgraph Shared Layer
         rul-router
         rul-image
         rul-auth
+        rul-internationalization
+        rul-persistence
     end
 end
 
 app-router -. integrates .- rul-router -. integrates .- expo-router
 next-image -. integrates .- rul-image -. integrates .- expo-image
 next-auth -. integrates .- rul-auth -. integrates .- expo-auth
+next-i18n -. integrates .- rul-internationalization -. integrates .- expo-localization
+rul-internationalization -. integrates .- i18n-js
+workbox -. integrates .- rul-persistence -. integrates .- rn-mmkv
 ```
 
 ### :leaves: Making React Cross-Platform Development a Breeze
@@ -107,11 +126,11 @@ Writing code that works on all platforms (Web, Android and iOS) is a difficult t
 
 > Desktop development is a more complex topic as there are two good ways to go: building Web-Based Apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building Native Apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
-> We know that [Remix](https://remix.run/) is also an excellent technology, but theoretically still little adopted. If you want to see it integrated, let us know!
+> We know that [Remix](https://remix.run/) is also an excellent technology, but theoretically still little adopted. If you want to see it integrated let us know!
 
 ### :checkered_flag: Be the Starting Point for New Projects
 
-Integrating **React Native Layer** into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with [Tamagui](https://tamagui.dev/), [TanStack Query](https://tanstack.com/query/latest), [Zustand](https://zustand-demo.pmnd.rs/), [React Native MMKV](https://github.com/mrousavy/react-native-mmkv) and [ESLint](https://eslint.org/).
+Integrating **React Native Layer** into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with [Tamagui](https://tamagui.dev/), [TanStack Query](https://tanstack.com/query/latest), [Zustand](https://zustand-demo.pmnd.rs/), [React Native MMKV](https://github.com/mrousavy/react-native-mmkv), [Workbox](https://developer.chrome.com/docs/workbox/) and [ESLint](https://eslint.org/).
 
 ### :vertical_traffic_light: Staying as Close to the Original Design as Possible
 
@@ -121,7 +140,7 @@ We never intend to create new features or offer APIs that are not available in b
 
 This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for Next.js's Pages Router and React Navigation**, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
 
-### :globe_with_meridians: Using Next.js as the Only Web Technology
+### :arrow_up_down: Using Next.js as the Only Web Technology
 
 Despite being often seen as a framework for Hybrid Mobile Development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on Native Apps, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
 
@@ -137,7 +156,7 @@ Each section of the documentation can have a hidden section at the end called 'I
 npx create-universal-layer-app@latest
 ```
 
-### :star: Creating a Batteries Included App
+### :battery: Creating a Batteries Included App
 
 ```shell
 npx create-universal-layer-app@latest --template with-batteries-included
@@ -970,6 +989,10 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 ### :framed_picture: `<Image />` Component
 
 ### :key: Authentication
+
+### :globe_with_meridians: Internationalization
+
+### :floppy_disk: Persistence
 
 ## :clap: Contributing
 
