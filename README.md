@@ -24,16 +24,16 @@
 This repository is a monorepo that contains three main projects.
 
 - `📄 README.md`: Project overview.
-- `📁 lib`: Library project.
+- 📁 [lib](/lib/): Library project.
   - `📄 README.md`: Library documentation.
   - `📁 src`: All library code, including Router, Image, Auth, Internationalization, Environment Variables and Persistence.
-- `📁 cli`: Command-line Interface project.
+- 📁 [cli](/cli/): Command-line Interface project.
   - `📄 README.md`: Command-line Interface documentation.
   - `📁 src`: All `react-universal-layer-cli` code.
-  - `📁 templates`: All templates that can be used with the CLI.
+  - 📁 [templates](/cli/templates/): All templates that can be used with the CLI.
     - `📄 README.md`: Templates documentation.
     - `📁 src`: All templates code.
-- `📁 vscode-extension`: Visual Studio Code Extension project.
+- 📁 [vscode-extension](/vscode-extension/): Visual Studio Code Extension project.
   - `📄 README.md`: Visual Studio Code Extension documentation.
   - `📁 src`: All Visual Studio Code Extension documentation code.
 
