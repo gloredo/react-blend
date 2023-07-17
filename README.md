@@ -260,6 +260,11 @@ function Loading() { ... }
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
 
+  useState(() => {
+    ...
+    setIsLoading(false);
+  }, [...])
+
   if (isLoading) return <Loading />;
 
   return ...;
