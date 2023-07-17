@@ -40,6 +40,56 @@
 
 ## 📍 Goal and Guidelines
 
+```mermaid
+graph LR
+
+next-specific{{Your Next.js Specific Code and Files}}
+app-router(App Router)
+next-image(Next Image Component)
+next-auth(Next Auth)
+
+expo-specific{{Your Expo Specific Code and Files}}
+expo-router(Expo Router)
+expo-image(Expo Image Component)
+expo-auth(Expo Auth)
+
+shared-code{{Your Shared Code}}
+rul-router(Universal Router)
+rul-image(Universal Image Component)
+rul-auth(Universal Auth)
+
+subgraph Next.js Layer
+    next-specific
+    subgraph Next.js Packages
+        app-router
+        next-image
+        next-auth
+    end
+end
+
+subgraph Expo Layer
+    expo-specific
+    subgraph Expo Packages
+        expo-router
+        expo-image
+        expo-auth
+    end
+end
+
+subgraph Shared Layer
+    shared-code
+    subgraph React Universal Layer
+        rul-router
+        rul-image
+        rul-auth
+    end
+end
+
+app-router -. integrates .- rul-router -. integrates .- expo-router
+next-image -. integrates .- rul-image -. integrates .- expo-image
+next-auth -. integrates .- rul-auth -. integrates .- expo-auth
+```
+
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
 ❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work!
@@ -104,8 +154,9 @@ yarn add react-universal-layer@latest
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
-- ✅ Role supported for the framework.
-- ❌ Role not supported for the framework.
+- ✅ File Role supported for the framework.
+- ❌ File Role not supported for the framework.
+- 🔨 File Role not supported for the framework, but has workaround.
 
 #### Important Rules
 
@@ -119,19 +170,192 @@ App Router requires a root `📄 layout.js` defined in `📁 app`. Expo Router d
 
 ##### Page File
 
+Unique UI of a route and make routes publicly accessible.
+
+###### ✅ App Router
+
+```diff
+├── 📁 app
+    ├── 📄 layout.js
++   ├── 📄 page.js
+```
+
+###### ✅ Expo Router
+
+```diff
+├── 📁 app
++   ├── 📄 index.js
+```
+
+```diff
+├── 📁 app
++   ├── 📄 route-name.js
+```
+
 ##### Layout File
+
+Shared UI for a segment and its children.
+
+###### ✅ App Router
+
+```diff
+├── 📁 app
++   ├── 📄 layout.js
+    ├── 📄 page.js
+```
+
+###### ✅ Expo Router
+
+```diff
+├── 📁 app
++   ├── 📄 _layout.js
+    ├── 📄 index.js
+```
 
 ##### Loading File
 
+###### ✅ App Router
+
+```diff
+├── 📁 app
++   ├── 📄 loading.js
+    ├── 📄 layout.js
+    ├── 📄 page.js
+```
+
+###### 🔨 Expo Router
+
+<!-- TODO: Verify if Root Layout File works -->
+
+Manage loading state inside your [Page File](#page-file) or [Layout File](#layout-file).
+
+```tsx
+import { useState } from "react";
+
+function Loading() { ... }
+
+export default function Page() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (isLoading) return <Loading />;
+
+  return ...;
+}
+```
+
 ##### Not Found File
+
+Not found UI for a segment and its children.
+
+###### ✅ App Router
+
+```diff
+├── 📁 app
++   ├── 📄 not-found.js
+    ├── 📄 layout.js
+    ├── 📄 page.js
+```
+
+###### ✅ Expo Router
+
+```diff
+├── 📁 app
++   ├── 📄 [...unmatched].js
+    ├── 📄 _layout.js
+    ├── 📄 index.js
+```
 
 ##### Error File
 
+Error UI for a segment and its children.
+
+###### ✅ App Router
+
+```diff
+├── 📁 app
+    ├── 📄 layout.js
+    ├── 📁 parent-route-name
+        ├── 📄 page.js
++       ├── 📄 error.js
+```
+
+Having `📄 error.js` in root directory doesn't work. To get this behavior you need to use [Global Error File](#global-error-file).
+
+```diff
+# It doesn't work.
+├── 📁 app
+    ├── 📄 layout.js
+    ├── 📄 page.js
++   ├── 📄 error.js
+```
+
+###### 🔨 Expo Router
+
+Export a default `Error Boundary` function inside your [Page File](#page-file).
+
+```diff
++export function ErrorBoundary(props: ErrorBoundaryProps) {
++  return ...;
++}
+
+export default function Page() { ... }
+```
+
 ##### Global Error File
+
+Global Error UI.
+
+###### ✅ App Router
+
+```diff
+├── 📁 app
++   ├── 📄 global-error.js
+    ├── 📄 layout.js
+    ├── 📄 page.js
+```
+
+###### 🔨 Expo Router
+
+<!-- TODO: Verify if Root Layout File works -->
+
+Export a default `Error Boundary` function inside your Root [Page File](#page-file) or Root [Layout File](#layout-file).
+
+```diff
++export function ErrorBoundary(props: ErrorBoundaryProps) {
++  return ...;
++}
+
+export default function RootPage() { ... }
+
+# OR
+
+export default function RootLayout() { ... }
+```
 
 ##### Template File
 
+Specialized re-rendered Layout UI. Templates are similar to layouts in that they wrap each child layout or page. Unlike layouts that persist across routes and maintain state, templates create a new instance for each of their children on navigation.
+
+###### ❌ Expo Router
+
+###### ✅ App Router
+
+```diff
+├── 📁 app
++   ├── 📄 template.js
+    ├── 📄 layout.js
+    ├── 📄 page.js
+```
+
 ##### Default File
+
+Fallback UI for [Parallel Routes](parallel-routes).
+
+###### ❌ Expo Router
+
+###### ✅ App Router
+
+Next.js documentation is still being written.
 
 #### Folders Roles
 
@@ -141,7 +365,7 @@ Matches route `/`.
 
 ###### ✅ App Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📄 page.js
@@ -149,7 +373,7 @@ Matches route `/`.
 
 ###### ✅ Expo Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 index.js
 ```
@@ -160,7 +384,7 @@ Matches route `/route-name`.
 
 ###### ✅ App Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📁 route-name
@@ -169,12 +393,12 @@ Matches route `/route-name`.
 
 ###### ✅ Expo Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 route-name.js
 ```
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📄 index.js
@@ -186,7 +410,7 @@ Matches route `/parent-route-name/child-route-name`.
 
 ###### ✅ App Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📁 parent-route-name
@@ -196,13 +420,13 @@ Matches route `/parent-route-name/child-route-name`.
 
 ###### ✅ Expo Router
 
-```
+```shell
 ├── 📁 app
     ├── 📁 parent-route-name
         ├── 📄 child-route-name
 ```
 
-```
+```shell
 ├── 📁 app
     ├── 📁 parent-route-name
         ├── 📁 child-route-name
@@ -215,7 +439,7 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
 
 ###### ✅ App Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📁 route-name
@@ -225,13 +449,13 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
 
 ###### ✅ Expo Router
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📄 [param].js
 ```
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 [param]
@@ -244,9 +468,10 @@ Matches route `/route-name/[...params]` where `📁 [...params]` is a array of v
 
 ###### ✅ App Router
 
-Navigating to `/route-name` throws an error. To get this behavior you need to use [Multiple Optional Parameters](#dynamic-route-with-multiple-optional-parameters).
+Navigation to `/route-name` doesn't work. To get this behavior you need to use [Multiple Optional Parameters](#dynamic-route-with-multiple-optional-parameters).
 
-```
+```shell
+# It doesn't work.
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📁 route-name
@@ -256,13 +481,13 @@ Navigating to `/route-name` throws an error. To get this behavior you need to us
 
 ###### ✅ Expo Router
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📄 [...params].js
 ```
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 [...params]
@@ -275,7 +500,7 @@ Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array 
 
 ###### ✅ App Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📁 route-name
@@ -289,13 +514,13 @@ Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array 
 
 In Expo Router Multiple Parameters are optional by default.
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📄 [...params].js
 ```
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 [...params]
@@ -308,7 +533,7 @@ Matches route `/route-name`.
 
 ###### ✅ App Router
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📁 (group-name)
@@ -318,13 +543,13 @@ Matches route `/route-name`.
 
 ###### ✅ Expo Router
 
-```
+```shell
 ├── 📁 app
     ├── 📁 (group-name)
         ├── 📄 route-name.js
 ```
 
-```
+```shell
 ├── 📁 app
     ├── 📁 (group-name)
         ├── 📁 route-name
@@ -339,7 +564,7 @@ Matches route `/route-name`.
 
 Matches route `/`. The `📄 page.js` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.js` via `props`.
 
-```
+```shell
 ├── 📁 app
     ├── 📄 layout.js
     ├── 📄 page.js
@@ -363,7 +588,7 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
   - `(..)(..)` matchs segments two levels above
   - `(...)` matchs segments from the root app directory
 
-```
+```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 (..)intercepting-route-name
@@ -382,7 +607,7 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
 
 Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].js`: `/(group-name-one)/[param].js`, `/(group-name-two)/[param].js` and `/(group-name-three)/[param].js`.
 
-```
+```shell
 ├── 📁 app
     ├── 📁 (group-name-one)
         ├── 📄 _layout.js
@@ -397,7 +622,7 @@ Allows the same URL to be rendered with different layouts through the use of Rou
 
 Duplication can be reduced using Array Syntax:
 
-```
+```shell
 ├── 📁 app
     ├── 📁 (group-name-one, group-name-two, group-name-three)
         ├── 📄 _layout.js
