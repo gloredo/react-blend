@@ -12,7 +12,7 @@
 
 ---
 
-- [:round_pushpin: Goal and Guidelines](#round_pushpin-goal-and-guidelines)
+- [:world_map: Goal and Guidelines](#world_map-goal-and-guidelines)
   - [:leaves: Making React Cross-Platform Development a Breeze](#leaves-making-react-cross-platform-development-a-breeze)
   - [:checkered_flag: Be the Starting Point for New Projects](#checkered_flag-be-the-starting-point-for-new-projects)
   - [:vertical_traffic_light: Staying as Close to the Original Design as Possible](#vertical_traffic_light-staying-as-close-to-the-original-design-as-possible)
@@ -40,7 +40,7 @@
 - [:clap: Contributing](#clap-contributing)
 - [:balance_scale: License](#balance_scale-license)
 
-## :round_pushpin: Goal and Guidelines
+## :world_map: Goal and Guidelines
 
 > **IMPORTANT TO KNOW**
 >
