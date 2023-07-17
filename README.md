@@ -24,7 +24,7 @@
   - [:battery: Creating a Batteries Included App](#battery-creating-a-batteries-included-app)
   - [Installing on Your Existing App](#installing-on-your-existing-app)
 - [:books: Documentation](#books-documentation)
-  - [:file_cabinet: Roles of Files and Folders](#file_cabinet-roles-of-files-and-folders)
+  - [:card_file_box: Roles of Files and Folders](#card_file_box-roles-of-files-and-folders)
     - [Important Rules](#important-rules)
     - [Files Roles](#files-roles)
     - [Folders Roles](#folders-roles)
@@ -35,6 +35,7 @@
   - [:framed_picture: `<Image />` Component](#framed_picture-image--component)
   - [:key: Authentication](#key-authentication)
   - [:globe_with_meridians: Internationalization](#globe_with_meridians-internationalization)
+  - [:link: Environment Variables](#link-environment-variables)
   - [:floppy_disk: Persistence](#floppy_disk-persistence)
 - [:clap: Contributing](#clap-contributing)
 - [:balance_scale: License](#balance_scale-license)
@@ -61,6 +62,7 @@ app-router(App Router)
 next-image(Next Image)
 next-auth(Next Auth)
 next-i18n(Next Internationalization Routing)
+next-env-vars(Next Environment Variables)
 workbox(Workbox)
 
 expo-specific{{Your Expo Specific Code and Files}}
@@ -69,6 +71,7 @@ expo-image(Expo Image)
 expo-auth(Expo Auth)
 expo-localization(Expo Localization)
 i18n-js(i18n.js)
+expo-env-vars(Expo Environment Variables)
 rn-mmkv(React Native MMKV)
 
 shared-code{{Your Shared Code}}
@@ -76,6 +79,7 @@ rul-router(Universal Router)
 rul-image(Universal Image)
 rul-auth(Universal Auth)
 rul-internationalization(Universal Internationalization)
+rul-env-vars(Universal Environment Variables)
 rul-persistence(Universal Persistence)
 
 subgraph Next.js Layer
@@ -84,6 +88,7 @@ subgraph Next.js Layer
         app-router
         next-image
         next-i18n
+        next-env-vars
     end
     next-auth
     workbox
@@ -94,8 +99,9 @@ subgraph Expo Layer
     subgraph Expo Packages
         expo-router
         expo-image
-        expo-auth
+        expo-env-vars
         expo-localization
+        expo-auth
     end
     i18n-js
     rn-mmkv
@@ -106,9 +112,10 @@ subgraph Shared Layer
     subgraph React Universal Layer
         rul-router
         rul-image
-        rul-auth
+        rul-env-vars
         rul-internationalization
         rul-persistence
+        rul-auth
     end
 end
 
@@ -117,6 +124,7 @@ next-image -.- rul-image -.- expo-image
 next-auth -.- rul-auth -.- expo-auth
 next-i18n -.- rul-internationalization -.- expo-localization
 rul-internationalization -.- i18n-js
+next-env-vars -.- rul-env-vars -.- expo-env-vars
 workbox -.- rul-persistence -.- rn-mmkv
 ```
 
@@ -178,7 +186,7 @@ yarn add react-universal-layer@latest
 
 ## :books: Documentation
 
-### :file_cabinet: Roles of Files and Folders
+### :card_file_box: Roles of Files and Folders
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
@@ -991,6 +999,8 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 ### :key: Authentication
 
 ### :globe_with_meridians: Internationalization
+
+### :link: Environment Variables
 
 ### :floppy_disk: Persistence
 
