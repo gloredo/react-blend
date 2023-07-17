@@ -54,15 +54,25 @@ expo-image(Expo Image Component)
 expo-auth(Expo Auth)
 
 shared-code{{Your Shared Code}}
+<<<<<<< HEAD
 rul-router(Universal Router)
 rul-image(Universal Image Component)
+=======
+rul-router(Universal Router)    
+rul-image(Universal Image Component)    
+>>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
 rul-auth(Universal Auth)
 
 subgraph Next.js Layer
     next-specific
     subgraph Next.js Packages
+<<<<<<< HEAD
         app-router
         next-image
+=======
+        app-router 
+        next-image 
+>>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
         next-auth
     end
 end
@@ -70,7 +80,11 @@ end
 subgraph Expo Layer
     expo-specific
     subgraph Expo Packages
+<<<<<<< HEAD
         expo-router
+=======
+        expo-router 
+>>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
         expo-image
         expo-auth
     end
@@ -79,10 +93,17 @@ end
 subgraph Shared Layer
     shared-code
     subgraph React Universal Layer
+<<<<<<< HEAD
         rul-router
         rul-image
         rul-auth
     end
+=======
+        rul-router 
+        rul-image 
+        rul-auth
+    end 
+>>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
 end
 
 app-router -. integrates .- rul-router -. integrates .- expo-router
