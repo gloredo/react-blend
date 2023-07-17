@@ -253,7 +253,7 @@ Shared UI for a segment and its children.
 Manage loading state inside your [Page File](#page-file) or [Layout File](#layout-file).
 
 ```tsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Loading() { ... }
 
