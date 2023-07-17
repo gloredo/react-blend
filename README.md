@@ -17,7 +17,7 @@
   - [🏁 Be the Starting Point for New Projects](#-be-the-starting-point-for-new-projects)
   - [🚦 Staying as Close to the Original Design as Possible](#-staying-as-close-to-the-original-design-as-possible)
   - [📏 Be Small to Always Stay Up to Date](#-be-small-to-always-stay-up-to-date)
-  - [🌐 Using Next.js as the Only Web Technology](#-using-nextjs-as-the-only-web-technology)
+  - [🌐 Using next.js as the Only Web Technology](#-using-nextjs-as-the-only-web-technology)
   - [💡 Implementation Reference Sections](#-implementation-reference-sections)
 - [🚀 Getting Started](#-getting-started)
   - [Creating a Minimal App](#creating-a-minimal-app)
@@ -43,7 +43,7 @@
 ```mermaid
 graph LR
 
-next-specific{{Your Next.js Specific Code and Files}}
+next-specific{{Your next.js Specific Code and Files}}
 app-router(App Router)
 next-image(Next Image Component)
 next-auth(Next Auth)
@@ -63,9 +63,9 @@ rul-image(Universal Image Component)
 >>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
 rul-auth(Universal Auth)
 
-subgraph Next.js Layer
+subgraph next.js Layer
     next-specific
-    subgraph Next.js Packages
+    subgraph next.js Packages
 <<<<<<< HEAD
         app-router
         next-image
@@ -111,13 +111,13 @@ next-image -. integrates .- rul-image -. integrates .- expo-image
 next-auth -. integrates .- rul-auth -. integrates .- expo-auth
 ```
 
-The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
+The **React Universal Layer** is a thin layer of integration between the [next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
 ❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work!
 
 ### 🍃 Making Cross-Platform Development a Breeze
 
-Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
 ### 🏁 Be the Starting Point for New Projects
 
@@ -129,11 +129,11 @@ We never intend to create new features or offer APIs that are not available in b
 
 ### 📏 Be Small to Always Stay Up to Date
 
-This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for Next.js's Pages Router and React Navigation**, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
+This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for next.js's Pages Router and React Navigation**, focusing all resources on integrating next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
 
-### 🌐 Using Next.js as the Only Web Technology
+### 🌐 Using next.js as the Only Web Technology
 
-Despite being often seen as a framework for hybrid mobile development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on native, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
+Despite being often seen as a framework for hybrid mobile development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as next.js. However, resources are scarce and Expo's main focus is on native, at the moment offering only basic web resources, so it's important to use next.js exclusively for building more optimized and modern Web Applications.
 
 ### 💡 Implementation Reference Sections
 
@@ -183,7 +183,7 @@ There is nothing new here, this section of the documentation has the sole purpos
 
 ##### App Router Requires a Root Layout
 
-App Router requires a root `📄 layout.js` defined in `📁 app`. Expo Router does not require.
+App Router requires a root `📄 layout.tsx` defined in `📁 app`. Expo Router does not require.
 
 ##### Using Your Own Files Inside Routers
 
@@ -199,20 +199,20 @@ Unique UI of a route and make routes publicly accessible.
 
 ```diff
 ├── 📁 app
-    ├── 📄 layout.js
-+   ├── 📄 page.js
+    ├── 📄 layout.tsx
++   ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
 
 ```diff
 ├── 📁 app
-+   ├── 📄 index.js
++   ├── 📄 index.tsx
 ```
 
 ```diff
 ├── 📁 app
-+   ├── 📄 route-name.js
++   ├── 📄 route-name.tsx
 ```
 
 ##### Layout File
@@ -223,16 +223,16 @@ Shared UI for a segment and its children.
 
 ```diff
 ├── 📁 app
-+   ├── 📄 layout.js
-    ├── 📄 page.js
++   ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
 
 ```diff
 ├── 📁 app
-+   ├── 📄 _layout.js
-    ├── 📄 index.js
++   ├── 📄 _layout.tsx
+    ├── 📄 index.tsx
 ```
 
 ##### Loading File
@@ -241,9 +241,9 @@ Shared UI for a segment and its children.
 
 ```diff
 ├── 📁 app
-+   ├── 📄 loading.js
-    ├── 📄 layout.js
-    ├── 📄 page.js
++   ├── 📄 loading.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### 🔨 Expo Router
@@ -279,18 +279,18 @@ Not found UI for a segment and its children.
 
 ```diff
 ├── 📁 app
-+   ├── 📄 not-found.js
-    ├── 📄 layout.js
-    ├── 📄 page.js
++   ├── 📄 not-found.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
 
 ```diff
 ├── 📁 app
-+   ├── 📄 [...unmatched].js
-    ├── 📄 _layout.js
-    ├── 📄 index.js
++   ├── 📄 [...unmatched].tsx
+    ├── 📄 _layout.tsx
+    ├── 📄 index.tsx
 ```
 
 ```tsx
@@ -307,20 +307,20 @@ Error UI for a segment and its children.
 
 ```diff
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 parent-route-name
-        ├── 📄 page.js
-+       ├── 📄 error.js
+        ├── 📄 page.tsx
++       ├── 📄 error.tsx
 ```
 
-Having `📄 error.js` in root directory doesn't work. To get this behavior you need to use [Global Error File](#global-error-file).
+Having `📄 error.tsx` in root directory doesn't work. To get this behavior you need to use [Global Error File](#global-error-file).
 
 ```diff
 # It doesn't work.
 ├── 📁 app
-    ├── 📄 layout.js
-    ├── 📄 page.js
-+   ├── 📄 error.js
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
++   ├── 📄 error.tsx
 ```
 
 ###### 🔨 Expo Router
@@ -349,9 +349,9 @@ Global Error UI.
 
 ```diff
 ├── 📁 app
-+   ├── 📄 global-error.js
-    ├── 📄 layout.js
-    ├── 📄 page.js
++   ├── 📄 global-error.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### 🔨 Expo Router
@@ -382,9 +382,9 @@ Specialized re-rendered Layout UI. Templates are similar to layouts in that they
 
 ```diff
 ├── 📁 app
-+   ├── 📄 template.js
-    ├── 📄 layout.js
-    ├── 📄 page.js
++   ├── 📄 template.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ##### Default File
@@ -395,7 +395,7 @@ Fallback UI for [Parallel Routes](parallel-routes).
 
 ###### ✅ App Router
 
-Next.js documentation is still being written.
+next.js documentation is still being written.
 
 #### Folders Roles
 
@@ -407,15 +407,15 @@ Matches route `/`.
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
-    ├── 📄 page.js
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
 
 ```shell
 ├── 📁 app
-    ├── 📄 index.js
+    ├── 📄 index.tsx
 ```
 
 ##### Named Routes
@@ -426,22 +426,22 @@ Matches route `/route-name`.
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 route-name
-        ├── 📄 page.js
+        ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
 
 ```shell
 ├── 📁 app
-    ├── 📄 route-name.js
+    ├── 📄 route-name.tsx
 ```
 
 ```shell
 ├── 📁 app
     ├── 📁 route-name
-        ├── 📄 index.js
+        ├── 📄 index.tsx
 ```
 
 ##### Nested Routes
@@ -452,10 +452,10 @@ Matches route `/parent-route-name/child-route-name`.
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 parent-route-name
         ├── 📁 child-route-name
-            ├── 📄 page.js
+            ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
@@ -470,7 +470,7 @@ Matches route `/parent-route-name/child-route-name`.
 ├── 📁 app
     ├── 📁 parent-route-name
         ├── 📁 child-route-name
-            ├── 📄 index.js
+            ├── 📄 index.tsx
 ```
 
 ##### Dynamic Route with One Parameter
@@ -481,10 +481,10 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 route-name
         ├── 📁 [param]
-            ├── 📄 page.js
+            ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
@@ -492,14 +492,14 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
 ```shell
 ├── 📁 app
     ├── 📁 route-name
-        ├── 📄 [param].js
+        ├── 📄 [param].tsx
 ```
 
 ```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 [param]
-            ├── 📄 index.js
+            ├── 📄 index.tsx
 ```
 
 ##### Dynamic Route with Multiple Parameters
@@ -513,10 +513,10 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
 ```shell
 # It doesn't work.
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 route-name
         ├── 📁 [...params]
-            ├── 📄 page.js
+            ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
@@ -524,14 +524,14 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
 ```shell
 ├── 📁 app
     ├── 📁 route-name
-        ├── 📄 [...params].js
+        ├── 📄 [...params].tsx
 ```
 
 ```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 [...params]
-            ├── 📄 index.js
+            ├── 📄 index.tsx
 ```
 
 ##### Dynamic Route with Multiple Optional Parameters
@@ -542,10 +542,10 @@ Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array 
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 route-name
         ├── 📁 [[...params]]
-            ├── 📄 page.js
+            ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
@@ -557,14 +557,14 @@ In Expo Router Multiple Parameters are optional by default.
 ```shell
 ├── 📁 app
     ├── 📁 route-name
-        ├── 📄 [...params].js
+        ├── 📄 [...params].tsx
 ```
 
 ```shell
 ├── 📁 app
     ├── 📁 route-name
         ├── 📁 [...params]
-            ├── 📄 index.js
+            ├── 📄 index.tsx
 ```
 
 ##### Route Groups
@@ -575,10 +575,10 @@ Matches route `/route-name`.
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
+    ├── 📄 layout.tsx
     ├── 📁 (group-name)
         ├── 📁 route-name
-            ├── 📄 page.js
+            ├── 📄 page.tsx
 ```
 
 ###### ✅ Expo Router
@@ -586,14 +586,14 @@ Matches route `/route-name`.
 ```shell
 ├── 📁 app
     ├── 📁 (group-name)
-        ├── 📄 route-name.js
+        ├── 📄 route-name.tsx
 ```
 
 ```shell
 ├── 📁 app
     ├── 📁 (group-name)
         ├── 📁 route-name
-            ├── 📄 index.js
+            ├── 📄 index.tsx
 ```
 
 ##### Parallel Routes
@@ -602,16 +602,16 @@ Matches route `/route-name`.
 
 ###### ✅ App Router
 
-Matches route `/`. The `📄 page.js` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.js` via `props`.
+Matches route `/`. The `📄 page.tsx` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.tsx` via `props`.
 
 ```shell
 ├── 📁 app
-    ├── 📄 layout.js
-    ├── 📄 page.js
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
     ├── 📁 @parallel-route-one
-        ├── 📄 page.js
+        ├── 📄 page.tsx
     ├── 📁 @parallel-route-two
-        ├── 📄 page.js
+        ├── 📄 page.tsx
 ```
 
 ##### Intercepting Routes
@@ -633,10 +633,10 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
     ├── 📁 route-name
         ├── 📁 (..)intercepting-route-name
             ├── 📁 [param]
-                ├── 📄 page.js
+                ├── 📄 page.tsx
     ├── 📁 intercepting-route-name
         ├── 📁 [param]
-            ├── 📄 page.js
+            ├── 📄 page.tsx
 ```
 
 ##### Shared Routes
@@ -645,19 +645,19 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
 
 ###### ✅ Expo Router
 
-Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].js`: `/(group-name-one)/[param].js`, `/(group-name-two)/[param].js` and `/(group-name-three)/[param].js`.
+Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].tsx`: `/(group-name-one)/[param].tsx`, `/(group-name-two)/[param].tsx` and `/(group-name-three)/[param].tsx`.
 
 ```shell
 ├── 📁 app
     ├── 📁 (group-name-one)
-        ├── 📄 _layout.js
-        ├── 📄 [param].js
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
     ├── 📁 (group-name-two)
-        ├── 📄 _layout.js
-        ├── 📄 [param].js
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
     ├── 📁 (group-name-three)
-        ├── 📄 _layout.js
-        ├── 📄 [param].js
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
 ```
 
 Duplication can be reduced using Array Syntax:
@@ -665,8 +665,8 @@ Duplication can be reduced using Array Syntax:
 ```shell
 ├── 📁 app
     ├── 📁 (group-name-one, group-name-two, group-name-three)
-        ├── 📄 _layout.js
-        ├── 📄 [param].js
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
 ```
 
 ### ⛖ Linking and Navigating
