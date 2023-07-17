@@ -21,13 +21,15 @@
 
 ## :world_map: Project Layout
 
+This repository is a monorepo that contains three main projects.
+
 - `📄 README.md`: Project overview.
 - `📁 lib`: Library project.
   - `📄 README.md`: Library documentation.
   - `📁 src`: All library code, including Router, Image, Auth, Internationalization, Environment Variables and Persistence.
 - `📁 cli`: Command-line Interface project.
   - `📄 README.md`: Command-line Interface documentation.
-  - `📁 src`: All `react-universal-layer-cli` CLI code.
+  - `📁 src`: All `react-universal-layer-cli` code.
   - `📁 templates`: All templates that can be used with the CLI.
     - `📄 README.md`: Templates documentation.
     - `📁 src`: All templates code.
