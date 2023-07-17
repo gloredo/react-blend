@@ -17,7 +17,7 @@
   - [🏁 Be the Starting Point for New Projects](#-be-the-starting-point-for-new-projects)
   - [🚦 Staying as Close to the Original Design as Possible](#-staying-as-close-to-the-original-design-as-possible)
   - [📏 Be Small to Always Stay Up to Date](#-be-small-to-always-stay-up-to-date)
-  - [🌐 Using next.js as the Only Web Technology](#-using-nextjs-as-the-only-web-technology)
+  - [🌐 Using Next.js as the Only Web Technology](#-using-nextjs-as-the-only-web-technology)
   - [💡 Implementation Reference Sections](#-implementation-reference-sections)
 - [🚀 Getting Started](#-getting-started)
   - [Creating a Minimal App](#creating-a-minimal-app)
@@ -43,7 +43,7 @@
 ```mermaid
 graph LR
 
-next-specific{{Your next.js Specific Code and Files}}
+next-specific{{Your Next.js Specific Code and Files}}
 app-router(App Router)
 next-image(Next Image Component)
 next-auth(Next Auth)
@@ -58,9 +58,9 @@ rul-router(Universal Router)
 rul-image(Universal Image Component)
 rul-auth(Universal Auth)
 
-subgraph next.js Layer
+subgraph Next.js Layer
     next-specific
-    subgraph next.js Packages
+    subgraph Next.js Packages
         app-router
         next-image
         next-auth
@@ -90,13 +90,13 @@ next-image -. integrates .- rul-image -. integrates .- expo-image
 next-auth -. integrates .- rul-auth -. integrates .- expo-auth
 ```
 
-The **React Universal Layer** is a thin layer of integration between the [next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
+The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
 ❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work!
 
 ### 🍃 Making Cross-Platform Development a Breeze
 
-Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
 ### 🏁 Be the Starting Point for New Projects
 
@@ -108,11 +108,11 @@ We never intend to create new features or offer APIs that are not available in b
 
 ### 📏 Be Small to Always Stay Up to Date
 
-This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for next.js's Pages Router and React Navigation**, focusing all resources on integrating next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
+This project needs to be always up to date to work properly, so keeping things small and simple is essential to avoid falling into trouble. Unfortunately this meant that things had to be cut back and it was decided to **drop support for Next.js's Pages Router and React Navigation**, focusing all resources on integrating Next.js's App Router and Expo Router APIs. This situation may change in the future, let us know!
 
-### 🌐 Using next.js as the Only Web Technology
+### 🌐 Using Next.js as the Only Web Technology
 
-Despite being often seen as a framework for hybrid mobile development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as next.js. However, resources are scarce and Expo's main focus is on native, at the moment offering only basic web resources, so it's important to use next.js exclusively for building more optimized and modern Web Applications.
+Despite being often seen as a framework for hybrid mobile development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on native, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
 
 ### 💡 Implementation Reference Sections
 
@@ -374,7 +374,7 @@ Fallback UI for [Parallel Routes](parallel-routes).
 
 ###### ✅ App Router
 
-next.js documentation is still being written.
+Next.js documentation is still being written.
 
 #### Folders Roles
 
