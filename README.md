@@ -39,9 +39,9 @@
 
 ## 📍 Goal and Guidelines
 
-> **Important to know!**
+> **IMPORTANT TO KNOW**
 >
-> This project **DOES NOT SUPPORT** Next.js's Pages Router and is not tested with React Navigation. Read more.
+> This project **DOES NOT SUPPORT** Next.js's Pages Router and **IS NOT TESTED** with React Navigation. [Read more](#📏-be-small-to-always-stay-up-to-date).
 
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
