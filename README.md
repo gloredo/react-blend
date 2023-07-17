@@ -10,6 +10,10 @@
   - [:straight_ruler: Be Small to Always Stay Up to Date](#straight_ruler-be-small-to-always-stay-up-to-date)
   - [:arrow_up_down: Using Next.js as the Only Web Technology](#arrow_up_down-using-nextjs-as-the-only-web-technology)
   - [:bulb: Implementation Reference Sections](#bulb-implementation-reference-sections)
+- [:rocket: Getting Started](#rocket-getting-started)
+  - [Creating a Minimal App](#creating-a-minimal-app)
+  - [:battery: Creating a Batteries Included App](#battery-creating-a-batteries-included-app)
+  - [Installing on Your Existing App](#installing-on-your-existing-app)
 
 > **IMPORTANT TO KNOW**
 >
@@ -23,10 +27,13 @@
   - `📁 src`: All library code, including Router, Image, Auth, Internationalization, Environment Variables and Persistence.
 - `📁 cli`: Command-line Interface project.
   - `📄 README.md`: Command-line Interface documentation.
-  - `📁 templates`: All template codes that can be used by the CLI.
+  - `📁 src`: All `react-universal-layer-cli` CLI code.
+  - `📁 templates`: All templates that can be used with the CLI.
     - `📄 README.md`: Templates documentation.
+    - `📁 src`: All templates code.
 - `📁 vscode-extension`: Visual Studio Code Extension project.
   - `📄 README.md`: Visual Studio Code Extension documentation.
+  - `📁 src`: All Visual Studio Code Extension documentation code.
 
 ## :dart: Goal and Guidelines
 
@@ -139,3 +146,31 @@ Despite being often seen as a framework for Hybrid Mobile Development, Expo posi
 ### :bulb: Implementation Reference Sections
 
 Each section of the documentation can have a hidden section at the end called 'Implementation Reference', responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
+
+## :rocket: Getting Started
+
+### Creating a Minimal App
+
+```shell
+npx react-universal-layer-cli@latest --create my-awesome-app
+```
+
+### :battery: Creating a Batteries Included App
+
+```shell
+npx react-universal-layer-cli@latest --create my-awesome-app --template with-batteries-included
+```
+
+### Installing on Your Existing App
+
+###### npm
+
+```shell
+npm install react-universal-layer@latest
+```
+
+###### yarn
+
+```shell
+yarn add react-universal-layer@latest
+```

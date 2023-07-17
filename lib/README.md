@@ -2,10 +2,6 @@
     <h1 align='center'>React Universal Layer</h1>
 </p>
 
-- [:rocket: Getting Started](#rocket-getting-started)
-  - [Creating a Minimal App](#creating-a-minimal-app)
-  - [:battery: Creating a Batteries Included App](#battery-creating-a-batteries-included-app)
-  - [Installing on Your Existing App](#installing-on-your-existing-app)
 - [:books: Documentation](#books-documentation)
   - [:card_file_box: Roles of Files and Folders](#card_file_box-roles-of-files-and-folders)
     - [Important Rules](#important-rules)
@@ -22,34 +18,6 @@
   - [:floppy_disk: Persistence](#floppy_disk-persistence)
 - [:clap: Contributing](#clap-contributing)
 - [:balance_scale: License](#balance_scale-license)
-
-## :rocket: Getting Started
-
-### Creating a Minimal App
-
-```shell
-npx create-universal-layer-app@latest
-```
-
-### :battery: Creating a Batteries Included App
-
-```shell
-npx create-universal-layer-app@latest --template with-batteries-included
-```
-
-### Installing on Your Existing App
-
-###### npm
-
-```shell
-npm install react-universal-layer@latest
-```
-
-###### yarn
-
-```shell
-yarn add react-universal-layer@latest
-```
 
 ## :books: Documentation
 
