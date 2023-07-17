@@ -41,7 +41,7 @@
 
 The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
-The macro goal of the React Universal Layer is to provide a simplified and integrated development for "React Universal Apps", a concept that tries to use the best technologies available in the React and JavaScript ecosystems using the same code base, sharing as much code as possible and leaving explicit via architecture codes unique to only one platform.
+The macro goal of the **React Universal Layer** is to provide a simplified and integrated development for "React Universal Apps", a concept where shared React Native code is written using together the best technologies available in the React and JavaScript ecosystems using the same codebase, always sharing as much code as possible and making code unique to only one platform explicit through architecture.
 
 ❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work! You can also understand more about "React Universal Apps" in these projects: [create-universal-app](https://github.com/chen-rn/CUA), [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo), [next-expo-solito](https://github.com/tamagui/tamagui/tree/master/starters/next-expo-solito) and [t3-turbo-and-clerk](https://github.com/clerkinc/t3-turbo-and-clerk).
 
@@ -99,9 +99,9 @@ next-auth -. integrates .- rul-auth -. integrates .- expo-auth
 
 ### 🍃 Making React Cross-Platform Development a Breeze
 
-Writing code that works on all platforms (Web, Android and iOS) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web.
+Writing code that works on all platforms (Web, Android and iOS) is a difficult task, but writing code that works on all platforms using the best of your "native environments" is an even more difficult task. Currently the best technologies in the ecosystem for this approach are Next.js ([React DOM](https://react.dev/)) for Web and Expo ([React Native](https://reactnative.dev/)) for Android and iOS.
 
-> Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+> Desktop development is a more complex topic as there are two good ways to go: building Web-Based Apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building Native Apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
 ### 🏁 Be the Starting Point for New Projects
 
@@ -117,7 +117,7 @@ This project needs to be always up to date to work properly, so keeping things s
 
 ### 🌐 Using Next.js as the Only Web Technology
 
-Despite being often seen as a framework for hybrid mobile development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on native, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
+Despite being often seen as a framework for Hybrid Mobile Development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on Native Apps, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
 
 ### 💡 Implementation Reference Sections
 
@@ -967,8 +967,8 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 
 ## 👏 Contributing
 
-If you like React Universal Layer and want to help make it better, just open an issue or discussion in this repository.
+If you like **React Universal Layer** and want to help make it better, just open an issue or discussion in this repository.
 
 ## ⚖️ License
 
-The React Universal Layer source code is made available under the [MIT license](LICENSE).
+The **React Universal Layer** source code is made available under the [MIT license](LICENSE).
