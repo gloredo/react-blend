@@ -171,11 +171,11 @@ There is nothing new here, this section of the documentation has the sole purpos
 
 ##### App Router Requires a Root Layout
 
-App Router requires a root `:page_facing_up: layout.tsx` defined in `:file_folder: app`. Expo Router does not require.
+App Router requires a root `📄 layout.tsx` defined in `📁 app`. Expo Router does not require.
 
 ##### Using Your Own Files Inside Routers
 
-In the App Router **you can put any file you want inside the `:file_folder: app`** because every file that represents a part of the Router is a file that follows a naming convention. On the other hand, in Expo Router a file with a generic name is considered a route, so **you cannot put your files inside the `:file_folder: app`** having to manage them in a separate folder.
+In the App Router **you can put any file you want inside the `📁 app`** because every file that represents a part of the Router is a file that follows a naming convention. On the other hand, in Expo Router a file with a generic name is considered a route, so **you cannot put your files inside the `📁 app`** having to manage them in a separate folder.
 
 #### Files Roles
 
@@ -186,21 +186,21 @@ Unique UI of a route and make routes publicly accessible.
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-+   ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
++   ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: index.tsx
+├── 📁 app
++   ├── 📄 index.tsx
 ```
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: route-name.tsx
+├── 📁 app
++   ├── 📄 route-name.tsx
 ```
 
 ##### Layout File
@@ -210,17 +210,17 @@ Shared UI for a segment and its children.
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
+├── 📁 app
++   ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: _layout.tsx
-    ├── :page_facing_up: index.tsx
+├── 📁 app
++   ├── 📄 _layout.tsx
+    ├── 📄 index.tsx
 ```
 
 ##### Loading File
@@ -228,10 +228,10 @@ Shared UI for a segment and its children.
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: loading.tsx
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
+├── 📁 app
++   ├── 📄 loading.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### :wrench: Expo Router
@@ -266,19 +266,19 @@ Not found UI for a segment and its children.
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: not-found.tsx
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
+├── 📁 app
++   ├── 📄 not-found.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: [...unmatched].tsx
-    ├── :page_facing_up: _layout.tsx
-    ├── :page_facing_up: index.tsx
+├── 📁 app
++   ├── 📄 [...unmatched].tsx
+    ├── 📄 _layout.tsx
+    ├── 📄 index.tsx
 ```
 
 ```tsx
@@ -294,21 +294,21 @@ Error UI for a segment and its children.
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: parent-route-name
-        ├── :page_facing_up: page.tsx
-+       ├── :page_facing_up: error.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 parent-route-name
+        ├── 📄 page.tsx
++       ├── 📄 error.tsx
 ```
 
-Having `:page_facing_up: error.tsx` in root directory doesn't work. To get this behavior you need to use [Global Error File](#global-error-file).
+Having `📄 error.tsx` in root directory doesn't work. To get this behavior you need to use [Global Error File](#global-error-file).
 
 ```diff
 # It doesn't work.
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
-+   ├── :page_facing_up: error.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
++   ├── 📄 error.tsx
 ```
 
 ###### :wrench: Expo Router
@@ -336,10 +336,10 @@ Global Error UI.
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: global-error.tsx
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
+├── 📁 app
++   ├── 📄 global-error.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### :wrench: Expo Router
@@ -369,10 +369,10 @@ Specialized re-rendered Layout UI. Templates are similar to layouts in that they
 ###### :heavy_check_mark: App Router
 
 ```diff
-├── :file_folder: app
-+   ├── :page_facing_up: template.tsx
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
+├── 📁 app
++   ├── 📄 template.tsx
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ##### Default File
@@ -394,16 +394,16 @@ Matches route `/`.
 ###### :heavy_check_mark: App Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📄 index.tsx
 ```
 
 ##### Named Routes
@@ -413,23 +413,23 @@ Matches route `/route-name`.
 ###### :heavy_check_mark: App Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: route-name
-        ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 route-name
+        ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: route-name.tsx
+├── 📁 app
+    ├── 📄 route-name.tsx
 ```
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📄 index.tsx
 ```
 
 ##### Nested Routes
@@ -439,60 +439,60 @@ Matches route `/parent-route-name/child-route-name`.
 ###### :heavy_check_mark: App Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: parent-route-name
-        ├── :file_folder: child-route-name
-            ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 parent-route-name
+        ├── 📁 child-route-name
+            ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: parent-route-name
-        ├── :page_facing_up: child-route-name
+├── 📁 app
+    ├── 📁 parent-route-name
+        ├── 📄 child-route-name
 ```
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: parent-route-name
-        ├── :file_folder: child-route-name
-            ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📁 parent-route-name
+        ├── 📁 child-route-name
+            ├── 📄 index.tsx
 ```
 
 ##### Dynamic Route with One Parameter
 
-Matches route `/route-name/[param]` where `:file_folder: [param]` is a single value sent by the route.
+Matches route `/route-name/[param]` where `📁 [param]` is a single value sent by the route.
 
 ###### :heavy_check_mark: App Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: route-name
-        ├── :file_folder: [param]
-            ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 route-name
+        ├── 📁 [param]
+            ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :page_facing_up: [param].tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📄 [param].tsx
 ```
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :file_folder: [param]
-            ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📁 [param]
+            ├── 📄 index.tsx
 ```
 
 ##### Dynamic Route with Multiple Parameters
 
-Matches route `/route-name/[...params]` where `:file_folder: [...params]` is a array of values sent by the route.
+Matches route `/route-name/[...params]` where `📁 [...params]` is a array of values sent by the route.
 
 ###### :heavy_check_mark: App Router
 
@@ -500,40 +500,40 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
 
 ```shell
 # It doesn't work.
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: route-name
-        ├── :file_folder: [...params]
-            ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 route-name
+        ├── 📁 [...params]
+            ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :page_facing_up: [...params].tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📄 [...params].tsx
 ```
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :file_folder: [...params]
-            ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📁 [...params]
+            ├── 📄 index.tsx
 ```
 
 ##### Dynamic Route with Multiple Optional Parameters
 
-Matches route `/route-name/[[...params]]` where `:file_folder: [[...params]]` is a array of values sent by the route or nothing (`/route-name`).
+Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array of values sent by the route or nothing (`/route-name`).
 
 ###### :heavy_check_mark: App Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: route-name
-        ├── :file_folder: [[...params]]
-            ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 route-name
+        ├── 📁 [[...params]]
+            ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
@@ -543,16 +543,16 @@ Matches route `/route-name/[[...params]]` where `:file_folder: [[...params]]` is
 In Expo Router Multiple Parameters are optional by default.
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :page_facing_up: [...params].tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📄 [...params].tsx
 ```
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :file_folder: [...params]
-            ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📁 [...params]
+            ├── 📄 index.tsx
 ```
 
 ##### Route Groups
@@ -562,26 +562,26 @@ Matches route `/route-name`.
 ###### :heavy_check_mark: App Router
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :file_folder: (group-name)
-        ├── :file_folder: route-name
-            ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📁 (group-name)
+        ├── 📁 route-name
+            ├── 📄 page.tsx
 ```
 
 ###### :heavy_check_mark: Expo Router
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: (group-name)
-        ├── :page_facing_up: route-name.tsx
+├── 📁 app
+    ├── 📁 (group-name)
+        ├── 📄 route-name.tsx
 ```
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: (group-name)
-        ├── :file_folder: route-name
-            ├── :page_facing_up: index.tsx
+├── 📁 app
+    ├── 📁 (group-name)
+        ├── 📁 route-name
+            ├── 📄 index.tsx
 ```
 
 ##### Parallel Routes
@@ -590,16 +590,16 @@ Matches route `/route-name`.
 
 ###### :heavy_check_mark: App Router
 
-Matches route `/`. The `:page_facing_up: page.tsx` component of the `:file_folder: @parallel-route-one` and `:file_folder: @parallel-route-two` routes are passed to `:page_facing_up: layout.tsx` via `props`.
+Matches route `/`. The `📄 page.tsx` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.tsx` via `props`.
 
 ```shell
-├── :file_folder: app
-    ├── :page_facing_up: layout.tsx
-    ├── :page_facing_up: page.tsx
-    ├── :file_folder: @parallel-route-one
-        ├── :page_facing_up: page.tsx
-    ├── :file_folder: @parallel-route-two
-        ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📄 layout.tsx
+    ├── 📄 page.tsx
+    ├── 📁 @parallel-route-one
+        ├── 📄 page.tsx
+    ├── 📁 @parallel-route-two
+        ├── 📄 page.tsx
 ```
 
 ##### Intercepting Routes
@@ -617,14 +617,14 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
   - `(...)` matchs segments from the root app directory
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: route-name
-        ├── :file_folder: (..)intercepting-route-name
-            ├── :file_folder: [param]
-                ├── :page_facing_up: page.tsx
-    ├── :file_folder: intercepting-route-name
-        ├── :file_folder: [param]
-            ├── :page_facing_up: page.tsx
+├── 📁 app
+    ├── 📁 route-name
+        ├── 📁 (..)intercepting-route-name
+            ├── 📁 [param]
+                ├── 📄 page.tsx
+    ├── 📁 intercepting-route-name
+        ├── 📁 [param]
+            ├── 📄 page.tsx
 ```
 
 ##### Shared Routes
@@ -633,28 +633,28 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
 
 ###### :heavy_check_mark: Expo Router
 
-Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `:page_facing_up: [param].tsx`: `/(group-name-one)/[param].tsx`, `/(group-name-two)/[param].tsx` and `/(group-name-three)/[param].tsx`.
+Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].tsx`: `/(group-name-one)/[param].tsx`, `/(group-name-two)/[param].tsx` and `/(group-name-three)/[param].tsx`.
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: (group-name-one)
-        ├── :page_facing_up: _layout.tsx
-        ├── :page_facing_up: [param].tsx
-    ├── :file_folder: (group-name-two)
-        ├── :page_facing_up: _layout.tsx
-        ├── :page_facing_up: [param].tsx
-    ├── :file_folder: (group-name-three)
-        ├── :page_facing_up: _layout.tsx
-        ├── :page_facing_up: [param].tsx
+├── 📁 app
+    ├── 📁 (group-name-one)
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
+    ├── 📁 (group-name-two)
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
+    ├── 📁 (group-name-three)
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
 ```
 
 Duplication can be reduced using Array Syntax:
 
 ```shell
-├── :file_folder: app
-    ├── :file_folder: (group-name-one, group-name-two, group-name-three)
-        ├── :page_facing_up: _layout.tsx
-        ├── :page_facing_up: [param].tsx
+├── 📁 app
+    ├── 📁 (group-name-one, group-name-two, group-name-three)
+        ├── 📄 _layout.tsx
+        ├── 📄 [param].tsx
 ```
 
 ### :twisted_rightwards_arrows: Linking and Navigating
