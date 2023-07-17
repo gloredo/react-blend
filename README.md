@@ -286,6 +286,12 @@ Not found UI for a segment and its children.
     ├── 📄 index.js
 ```
 
+```tsx
+import { Unmatched } from "expo-router";
+
+export default Unmatched;
+```
+
 ##### Error File
 
 Error UI for a segment and its children.
@@ -312,16 +318,20 @@ Having `📄 error.js` in root directory doesn't work. To get this behavior you 
 
 ###### 🔨 Expo Router
 
-<!-- TODO: Verify if Root Layout File works -->
+<!-- TODO: Verify if Layout File works -->
 
-Export a default `Error Boundary` function inside your Root [Page File](#page-file) or Root [Layout File](#layout-file).
+Export a default `Error Boundary` function inside your [Page File](#page-file) or [Layout File](#layout-file).
 
-```diff
-+export function ErrorBoundary(props: ErrorBoundaryProps) {
-+  return ...;
-+}
+```tsx
+import { ErrorBoundaryProps } from 'expo-router';
+
+export function ErrorBoundary(props: ErrorBoundaryProps) { ... }
 
 export default function Page() { ... }
+
+//OR
+
+export default function Layout() { ... }
 ```
 
 ##### Global Error File
@@ -339,7 +349,21 @@ Global Error UI.
 
 ###### 🔨 Expo Router
 
-Expo Router does not differentiate between global and non-global errors. Use [Error File](#error-file).
+<!-- TODO: Verify if Root Layout File works -->
+
+Expo Router does not differentiate between global and non-global errors. Export a default `Error Boundary` function inside your Root [Page File](#page-file) or Root [Layout File](#layout-file).
+
+```tsx
+import { ErrorBoundaryProps } from 'expo-router';
+
+export function ErrorBoundary(props: ErrorBoundaryProps) { ... }
+
+export default function RootPage() { ... }
+
+//OR
+
+export default function RootLayout() { ... }
+```
 
 ##### Template File
 
