@@ -175,9 +175,9 @@ yarn add react-universal-layer@latest
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
-- ✅ File Role supported for the framework.
-- ❌ File Role not supported for the framework.
-- 🔨 File Role not supported for the framework, but has workaround.
+- ✅ Role supported for the framework.
+- ❌ Role not supported for the framework.
+- 🔨 Role not supported for the framework, but has workaround.
 
 #### Important Rules
 
@@ -186,6 +186,8 @@ There is nothing new here, this section of the documentation has the sole purpos
 App Router requires a root `📄 layout.js` defined in `📁 app`. Expo Router does not require.
 
 ##### Using Your Own Files Inside Routers
+
+In the App Router **you can put any file you want inside the `📁 app`** because every file that represents a part of the Router is a file that follows a naming convention. On the other hand, in Expo Router a file with a generic name is considered a route, so **you cannot put your files inside the `📁 app`** having to manage them in a separate folder.
 
 #### Files Roles
 
