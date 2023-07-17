@@ -13,7 +13,7 @@
 ---
 
 - [📍 Goal and Guidelines](#-goal-and-guidelines)
-  - [🍃 Making Cross-Platform Development a Breeze](#-making-cross-platform-development-a-breeze)
+  - [🍃 Making React Cross-Platform Development a Breeze](#-making-react-cross-platform-development-a-breeze)
   - [🏁 Be the Starting Point for New Projects](#-be-the-starting-point-for-new-projects)
   - [🚦 Staying as Close to the Original Design as Possible](#-staying-as-close-to-the-original-design-as-possible)
   - [📏 Be Small to Always Stay Up to Date](#-be-small-to-always-stay-up-to-date)
@@ -24,7 +24,6 @@
   - [🌟 Creating a Batteries Included App](#-creating-a-batteries-included-app)
   - [Installing on Your Existing App](#installing-on-your-existing-app)
 - [📚 Documentation](#-documentation)
-  - [Instalation](#instalation)
   - [🗄️ Roles of Files and Folders](#️-roles-of-files-and-folders)
     - [Important Rules](#important-rules)
     - [Files Roles](#files-roles)
@@ -39,6 +38,14 @@
 - [⚖️ License](#️-license)
 
 ## 📍 Goal and Guidelines
+
+The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
+
+The macro goal of the React Universal Layer is to provide a simplified and integrated development for "React Universal Apps", a concept that tries to use the best technologies available in the React and JavaScript ecosystems using the same code base, sharing as much code as possible and leaving explicit via architecture codes unique to only one platform.
+
+❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work! You can also understand more about "React Universal Apps" in these projects: [create-universal-app](https://github.com/chen-rn/CUA), [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo), [next-expo-solito](https://github.com/tamagui/tamagui/tree/master/starters/next-expo-solito) and [t3-turbo-and-clerk](https://github.com/clerkinc/t3-turbo-and-clerk).
+
+The flowchart below defines how this works in practice.
 
 ```mermaid
 graph LR
@@ -90,13 +97,11 @@ next-image -. integrates .- rul-image -. integrates .- expo-image
 next-auth -. integrates .- rul-auth -. integrates .- expo-auth
 ```
 
-The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
+### 🍃 Making React Cross-Platform Development a Breeze
 
-❤️ This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work!
+Writing code that works on all platforms (Web, Android and iOS) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web.
 
-### 🍃 Making Cross-Platform Development a Breeze
-
-Writing code that works on all platforms (Web, Android, iOS, Desktop) is a difficult task, but writing code that works on all platforms using the best of their native environments is an even harder task. This is the main objective of 'React Universal Apps', the idea of writing React code that uses the best and most modern development, which currently boils down to Expo ([React Native](https://reactnative.dev/)) for Android and iOS, and Next.js ([React DOM](https://react.dev/)) for Web. Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
+> Desktop development is a more complex topic as there are two good ways to go: building web-based apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building native apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
 ### 🏁 Be the Starting Point for New Projects
 
@@ -147,8 +152,6 @@ yarn add react-universal-layer@latest
 ```
 
 ## 📚 Documentation
-
-### Instalation
 
 ### 🗄️ Roles of Files and Folders
 
