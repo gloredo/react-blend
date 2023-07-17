@@ -58,8 +58,8 @@ shared-code{{Your Shared Code}}
 rul-router(Universal Router)
 rul-image(Universal Image Component)
 =======
-rul-router(Universal Router)    
-rul-image(Universal Image Component)    
+rul-router(Universal Router)
+rul-image(Universal Image Component)
 >>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
 rul-auth(Universal Auth)
 
@@ -70,8 +70,8 @@ subgraph Next.js Layer
         app-router
         next-image
 =======
-        app-router 
-        next-image 
+        app-router
+        next-image
 >>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
         next-auth
     end
@@ -83,7 +83,7 @@ subgraph Expo Layer
 <<<<<<< HEAD
         expo-router
 =======
-        expo-router 
+        expo-router
 >>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
         expo-image
         expo-auth
@@ -99,10 +99,10 @@ subgraph Shared Layer
         rul-auth
     end
 =======
-        rul-router 
-        rul-image 
+        rul-router
+        rul-image
         rul-auth
-    end 
+    end
 >>>>>>> dd1325f798270fc58bb5c77b774005ab34a65b3a
 end
 
@@ -312,7 +312,9 @@ Having `📄 error.js` in root directory doesn't work. To get this behavior you 
 
 ###### 🔨 Expo Router
 
-Export a default `Error Boundary` function inside your [Page File](#page-file).
+<!-- TODO: Verify if Root Layout File works -->
+
+Export a default `Error Boundary` function inside your Root [Page File](#page-file) or Root [Layout File](#layout-file).
 
 ```diff
 +export function ErrorBoundary(props: ErrorBoundaryProps) {
@@ -337,21 +339,7 @@ Global Error UI.
 
 ###### 🔨 Expo Router
 
-<!-- TODO: Verify if Root Layout File works -->
-
-Export a default `Error Boundary` function inside your Root [Page File](#page-file) or Root [Layout File](#layout-file).
-
-```diff
-+export function ErrorBoundary(props: ErrorBoundaryProps) {
-+  return ...;
-+}
-
-export default function RootPage() { ... }
-
-# OR
-
-export default function RootLayout() { ... }
-```
+Expo Router does not differentiate between global and non-global errors. Use [Error File](#error-file).
 
 ##### Template File
 
