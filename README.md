@@ -149,7 +149,7 @@ This project needs to be always up to date to work properly, so keeping things s
 
 ### :arrow_up_down: Using Next.js as the Only Web Technology
 
-Despite being often seen as a framework for Hybrid Mobile Development, Expo positions itself as a framwork for 'Universal Native Apps with React That Run on Android, iOS, and the Web'. This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on Native Apps, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
+Despite being often seen as a framework for Hybrid Mobile Development, Expo positions itself as a framwork for "Universal Native Apps with React That Run on Android, iOS, and the Web". This means that more and more of its packages provide full support for the Web, dispensing with the integration of another technology such as Next.js. However, resources are scarce and Expo's main focus is on Native Apps, at the moment offering only basic web resources, so it's important to use Next.js exclusively for building more optimized and modern Web Applications.
 
 ### :bulb: Implementation Reference Sections
 
