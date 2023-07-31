@@ -14,6 +14,8 @@
   - [Creating a Minimal App](#creating-a-minimal-app)
   - [:battery: Creating a Batteries Included App](#battery-creating-a-batteries-included-app)
   - [Installing on Your Existing App](#installing-on-your-existing-app)
+- [:clap: Contributing](#clap-contributing)
+- [:balance_scale: License](#balance_scale-license)
 
 > **IMPORTANT TO KNOW**
 >
@@ -196,3 +198,11 @@ yarn add react-blend@latest
 ```shell
 npm install react-blend@latest
 ```
+
+## :clap: Contributing
+
+If you like **React Blend** and want to help make it better, just open an issue or discussion in this repository.
+
+## :balance_scale: License
+
+The **React Blend** source code is made available under the [MIT license](LICENSE).

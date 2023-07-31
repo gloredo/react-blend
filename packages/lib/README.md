@@ -16,8 +16,6 @@
   - [:globe_with_meridians: Internationalization](#globe_with_meridians-internationalization)
   - [:link: Environment Variables](#link-environment-variables)
   - [:floppy_disk: Persistence](#floppy_disk-persistence)
-- [:clap: Contributing](#clap-contributing)
-- [:balance_scale: License](#balance_scale-license)
 
 ## :books: Documentation
 
@@ -838,11 +836,3 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 ### :link: Environment Variables
 
 ### :floppy_disk: Persistence
-
-## :clap: Contributing
-
-If you like **React Blend** and want to help make it better, just open an issue or discussion in this repository.
-
-## :balance_scale: License
-
-The **React Blend** source code is made available under the [MIT license](LICENSE).
