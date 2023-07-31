@@ -44,7 +44,7 @@ In the App Router **you can put any file you want inside the `📁 app`** becaus
 
 Unique UI of a route and make routes publicly accessible.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -52,7 +52,7 @@ Unique UI of a route and make routes publicly accessible.
 +   ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```diff
 ├── 📁 app
@@ -68,7 +68,7 @@ Unique UI of a route and make routes publicly accessible.
 
 Shared UI for a segment and its children.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -76,7 +76,7 @@ Shared UI for a segment and its children.
     ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```diff
 ├── 📁 app
@@ -86,7 +86,7 @@ Shared UI for a segment and its children.
 
 #### Loading File
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -95,7 +95,7 @@ Shared UI for a segment and its children.
     ├── 📄 page.tsx
 ```
 
-#### :wrench: Expo Router
+##### :wrench: Expo Router
 
 <!-- TODO: Verify if Root Layout File works -->
 
@@ -124,7 +124,7 @@ export default function Page() {
 
 Not found UI for a segment and its children.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -133,7 +133,7 @@ Not found UI for a segment and its children.
     ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```diff
 ├── 📁 app
@@ -152,7 +152,7 @@ export default Unmatched;
 
 Error UI for a segment and its children.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -172,7 +172,7 @@ Having `📄 error.tsx` in root directory doesn't work. To get this behavior you
 +   ├── 📄 error.tsx
 ```
 
-#### :wrench: Expo Router
+##### :wrench: Expo Router
 
 <!-- TODO: Verify if Layout File works -->
 
@@ -194,7 +194,7 @@ export default function Layout() { ... }
 
 Global Error UI.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -203,7 +203,7 @@ Global Error UI.
     ├── 📄 page.tsx
 ```
 
-#### :wrench: Expo Router
+##### :wrench: Expo Router
 
 <!-- TODO: Verify if Root Layout File works -->
 
@@ -225,9 +225,9 @@ export default function RootLayout() { ... }
 
 Specialized re-rendered Layout UI. Templates are similar to layouts in that they wrap each child layout or page. Unlike layouts that persist across routes and maintain state, templates create a new instance for each of their children on navigation.
 
-#### :x: Expo Router
+##### :x: Expo Router
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -240,9 +240,9 @@ Specialized re-rendered Layout UI. Templates are similar to layouts in that they
 
 Fallback UI for [Parallel Routes](parallel-routes).
 
-#### :x: Expo Router
+##### :x: Expo Router
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 Next.js documentation is still being written.
 
@@ -252,7 +252,7 @@ Next.js documentation is still being written.
 
 Matches route `/`.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -260,7 +260,7 @@ Matches route `/`.
     ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -271,7 +271,7 @@ Matches route `/`.
 
 Matches route `/route-name`.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -280,7 +280,7 @@ Matches route `/route-name`.
         ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -297,7 +297,7 @@ Matches route `/route-name`.
 
 Matches route `/parent-route-name/child-route-name`.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -307,7 +307,7 @@ Matches route `/parent-route-name/child-route-name`.
             ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -326,7 +326,7 @@ Matches route `/parent-route-name/child-route-name`.
 
 Matches route `/route-name/[param]` where `📁 [param]` is a single value sent by the route.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -336,7 +336,7 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
             ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -355,7 +355,7 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
 
 Matches route `/route-name/[...params]` where `📁 [...params]` is a array of values sent by the route.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 Navigation to `/route-name` doesn't work. To get this behavior you need to use [Multiple Optional Parameters](#dynamic-route-with-multiple-optional-parameters).
 
@@ -368,7 +368,7 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
             ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -387,7 +387,7 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
 
 Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array of values sent by the route or nothing (`/route-name`).
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -397,7 +397,7 @@ Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array 
             ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 <!-- TODO: Try navigate to '/route-name'  -->
 
@@ -420,7 +420,7 @@ In Expo Router Multiple Parameters are optional by default.
 
 Matches route `/route-name`.
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -430,7 +430,7 @@ Matches route `/route-name`.
             ├── 📄 page.tsx
 ```
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -447,9 +447,9 @@ Matches route `/route-name`.
 
 #### Parallel Routes
 
-#### :x: Expo Router
+##### :x: Expo Router
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 Matches route `/`. The `📄 page.tsx` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.tsx` via `props`.
 
@@ -465,9 +465,9 @@ Matches route `/`. The `📄 page.tsx` component of the `📁 @parallel-route-on
 
 #### Intercepting Routes
 
-#### :x: Expo Router
+##### :x: Expo Router
 
-#### :heavy_check_mark: App Router
+##### :heavy_check_mark: App Router
 
 When navigating to `/intercepting-route-name/paramValue` within `/route-name` this route will be intercepted and the URL updated to `/intercepting-route-name/paramValue`, however when this URL is shared the level context defined by convention will be maintained. It can be combined with Parallel Routes to obtain an excellent pattern for modals.
 
@@ -490,9 +490,9 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
 
 #### Shared Routes
 
-#### :x: App Router
+##### :x: App Router
 
-#### :heavy_check_mark: Expo Router
+##### :heavy_check_mark: Expo Router
 
 Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].tsx`: `/(group-name-one)/[param].tsx`, `/(group-name-two)/[param].tsx` and `/(group-name-three)/[param].tsx`.
 
