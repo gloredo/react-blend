@@ -25,21 +25,21 @@ This repository is a monorepo that contains two projects and a sandbox developme
 
 - `📄 README.md`: Project overview (This file)
 - 📁 [packages](/packages/): Folder containing the two projects
-  - 📁 [lib](/lib/): Library project folder
+  - 📁 [lib](/packages/lib/): Library project folder
     - `📄 README.md`: `react-blend` documentation
     - `📁 src`: Contains the code for the Router, Image and Persistence
     - `📁 scripts`: Contains scripts to synchronize Authentication, Internationalization and Environment Variables
-  - 📁 [cli](/cli/): Command-line Interface project to `create-react-blend`
+  - 📁 [cli](/packages/cli/): Command-line Interface project folder
     - `📄 README.md`: `create-react-blend` documentation
     - `📁 src`: All `create-react-blend` code
     - 📁 [templates](/cli/templates/): All templates that can be used with `create-react-blend`
       - `📄 README.md`: Templates documentation
       - `📁 src`: All templates code
 - 📁 [development-sandbox](/development-sandbox/): Test environment created from [Create Tamagui App](https://tamagui.dev/docs/guides/create-tamagui-app) with the `next-expo-solito` template to be used during `react-blend` development
-  - `📁 apps`: Next.js and Expo projects
+  - 📁 [apps](/development-sandbox/apps/): Next.js and Expo projects
     - `📁 next`: Next.js project
     - `📁 expo`: Expo project
-  - `📁 packages`: Shared Code organized by features with `react-blend`
+  - `📁` [packages](/development-sandbox/packages/): Shared Code organized by features with `react-blend`
 
 ## :dart: Goal and Guidelines
 
