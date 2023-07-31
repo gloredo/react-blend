@@ -1,25 +1,22 @@
 <p align='center'>
-    <h1 align='center'>React Blend</h1>
+    <h1 align='center'>React Blend Documentation</h1>
 </p>
 
-- [:books: Documentation](#books-documentation)
-  - [:card_file_box: Roles of Files and Folders](#card_file_box-roles-of-files-and-folders)
-    - [Important Rules](#important-rules)
-    - [Files Roles](#files-roles)
-    - [Folders Roles](#folders-roles)
-  - [:twisted_rightwards_arrows: Linking and Navigating](#twisted_rightwards_arrows-linking-and-navigating)
-    - [Navigation with `<Link>` Component](#navigation-with-link-component)
-    - [Imperative Navigation with `router`](#imperative-navigation-with-router)
-    - [Get Param(s) Sent Throug Route](#get-params-sent-throug-route)
-  - [:framed_picture: `<Image />` Component](#framed_picture-image--component)
-  - [:key: Authentication](#key-authentication)
-  - [:globe_with_meridians: Internationalization](#globe_with_meridians-internationalization)
-  - [:link: Environment Variables](#link-environment-variables)
-  - [:floppy_disk: Persistence](#floppy_disk-persistence)
+- [:card_file_box: Roles of Files and Folders](#card_file_box-roles-of-files-and-folders)
+  - [Important Rules](#important-rules)
+  - [Files Roles](#files-roles)
+  - [Folders Roles](#folders-roles)
+- [:twisted_rightwards_arrows: Linking and Navigating](#twisted_rightwards_arrows-linking-and-navigating)
+  - [Navigation with `<Link>` Component](#navigation-with-link-component)
+  - [Imperative Navigation with `router`](#imperative-navigation-with-router)
+  - [Get Param(s) Sent Throug Route](#get-params-sent-throug-route)
+- [:framed_picture: `<Image />` Component](#framed_picture-image--component)
+- [:key: Authentication](#key-authentication)
+- [:globe_with_meridians: Internationalization](#globe_with_meridians-internationalization)
+- [:link: Environment Variables](#link-environment-variables)
+- [:floppy_disk: Persistence](#floppy_disk-persistence)
 
-## :books: Documentation
-
-### :card_file_box: Roles of Files and Folders
+## :card_file_box: Roles of Files and Folders
 
 There is nothing new here, this section of the documentation has the sole purpose of succinctly summarizing and keeping track of all folder and file scenarios possible to implement in each framework.
 
@@ -27,23 +24,23 @@ There is nothing new here, this section of the documentation has the sole purpos
 - :x: Role not supported for the framework.
 - :wrench: Role not supported for the framework, but has workaround.
 
-#### Important Rules
+### Important Rules
 
-##### App Router Requires a Root Layout
+#### App Router Requires a Root Layout
 
 App Router requires a root `📄 layout.tsx` defined in `📁 app`. Expo Router does not require.
 
-##### Using Your Own Files Inside Routers
+#### Using Your Own Files Inside Routers
 
 In the App Router **you can put any file you want inside the `📁 app`** because every file that represents a part of the Router is a file that follows a naming convention. On the other hand, in Expo Router a file with a generic name is considered a route, so **you cannot put your files inside the `📁 app`** having to manage them in a separate folder.
 
-#### Files Roles
+### Files Roles
 
-##### Page File
+#### Page File
 
 Unique UI of a route and make routes publicly accessible.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -51,7 +48,7 @@ Unique UI of a route and make routes publicly accessible.
 +   ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```diff
 ├── 📁 app
@@ -63,11 +60,11 @@ Unique UI of a route and make routes publicly accessible.
 +   ├── 📄 route-name.tsx
 ```
 
-##### Layout File
+#### Layout File
 
 Shared UI for a segment and its children.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -75,7 +72,7 @@ Shared UI for a segment and its children.
     ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```diff
 ├── 📁 app
@@ -83,9 +80,9 @@ Shared UI for a segment and its children.
     ├── 📄 index.tsx
 ```
 
-##### Loading File
+#### Loading File
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -94,7 +91,7 @@ Shared UI for a segment and its children.
     ├── 📄 page.tsx
 ```
 
-###### :wrench: Expo Router
+#### :wrench: Expo Router
 
 <!-- TODO: Verify if Root Layout File works -->
 
@@ -119,11 +116,11 @@ export default function Page() {
 }
 ```
 
-##### Not Found File
+#### Not Found File
 
 Not found UI for a segment and its children.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -132,7 +129,7 @@ Not found UI for a segment and its children.
     ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```diff
 ├── 📁 app
@@ -147,11 +144,11 @@ import { Unmatched } from "expo-router";
 export default Unmatched;
 ```
 
-##### Error File
+#### Error File
 
 Error UI for a segment and its children.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -171,7 +168,7 @@ Having `📄 error.tsx` in root directory doesn't work. To get this behavior you
 +   ├── 📄 error.tsx
 ```
 
-###### :wrench: Expo Router
+#### :wrench: Expo Router
 
 <!-- TODO: Verify if Layout File works -->
 
@@ -189,11 +186,11 @@ export default function Page() { ... }
 export default function Layout() { ... }
 ```
 
-##### Global Error File
+#### Global Error File
 
 Global Error UI.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -202,7 +199,7 @@ Global Error UI.
     ├── 📄 page.tsx
 ```
 
-###### :wrench: Expo Router
+#### :wrench: Expo Router
 
 <!-- TODO: Verify if Root Layout File works -->
 
@@ -220,13 +217,13 @@ export default function RootPage() { ... }
 export default function RootLayout() { ... }
 ```
 
-##### Template File
+#### Template File
 
 Specialized re-rendered Layout UI. Templates are similar to layouts in that they wrap each child layout or page. Unlike layouts that persist across routes and maintain state, templates create a new instance for each of their children on navigation.
 
-###### :x: Expo Router
+#### :x: Expo Router
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```diff
 ├── 📁 app
@@ -235,23 +232,23 @@ Specialized re-rendered Layout UI. Templates are similar to layouts in that they
     ├── 📄 page.tsx
 ```
 
-##### Default File
+#### Default File
 
 Fallback UI for [Parallel Routes](parallel-routes).
 
-###### :x: Expo Router
+#### :x: Expo Router
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 Next.js documentation is still being written.
 
-#### Folders Roles
+### Folders Roles
 
-##### Root Route
+#### Root Route
 
 Matches route `/`.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -259,18 +256,18 @@ Matches route `/`.
     ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
     ├── 📄 index.tsx
 ```
 
-##### Named Routes
+#### Named Routes
 
 Matches route `/route-name`.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -279,7 +276,7 @@ Matches route `/route-name`.
         ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -292,11 +289,11 @@ Matches route `/route-name`.
         ├── 📄 index.tsx
 ```
 
-##### Nested Routes
+#### Nested Routes
 
 Matches route `/parent-route-name/child-route-name`.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -306,7 +303,7 @@ Matches route `/parent-route-name/child-route-name`.
             ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -321,11 +318,11 @@ Matches route `/parent-route-name/child-route-name`.
             ├── 📄 index.tsx
 ```
 
-##### Dynamic Route with One Parameter
+#### Dynamic Route with One Parameter
 
 Matches route `/route-name/[param]` where `📁 [param]` is a single value sent by the route.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -335,7 +332,7 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
             ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -350,11 +347,11 @@ Matches route `/route-name/[param]` where `📁 [param]` is a single value sent 
             ├── 📄 index.tsx
 ```
 
-##### Dynamic Route with Multiple Parameters
+#### Dynamic Route with Multiple Parameters
 
 Matches route `/route-name/[...params]` where `📁 [...params]` is a array of values sent by the route.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 Navigation to `/route-name` doesn't work. To get this behavior you need to use [Multiple Optional Parameters](#dynamic-route-with-multiple-optional-parameters).
 
@@ -367,7 +364,7 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
             ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -382,11 +379,11 @@ Navigation to `/route-name` doesn't work. To get this behavior you need to use [
             ├── 📄 index.tsx
 ```
 
-##### Dynamic Route with Multiple Optional Parameters
+#### Dynamic Route with Multiple Optional Parameters
 
 Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array of values sent by the route or nothing (`/route-name`).
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -396,7 +393,7 @@ Matches route `/route-name/[[...params]]` where `📁 [[...params]]` is a array 
             ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 <!-- TODO: Try navigate to '/route-name'  -->
 
@@ -415,11 +412,11 @@ In Expo Router Multiple Parameters are optional by default.
             ├── 📄 index.tsx
 ```
 
-##### Route Groups
+#### Route Groups
 
 Matches route `/route-name`.
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 ```shell
 ├── 📁 app
@@ -429,7 +426,7 @@ Matches route `/route-name`.
             ├── 📄 page.tsx
 ```
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 ```shell
 ├── 📁 app
@@ -444,11 +441,11 @@ Matches route `/route-name`.
             ├── 📄 index.tsx
 ```
 
-##### Parallel Routes
+#### Parallel Routes
 
-###### :x: Expo Router
+#### :x: Expo Router
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 Matches route `/`. The `📄 page.tsx` component of the `📁 @parallel-route-one` and `📁 @parallel-route-two` routes are passed to `📄 layout.tsx` via `props`.
 
@@ -462,11 +459,11 @@ Matches route `/`. The `📄 page.tsx` component of the `📁 @parallel-route-on
         ├── 📄 page.tsx
 ```
 
-##### Intercepting Routes
+#### Intercepting Routes
 
-###### :x: Expo Router
+#### :x: Expo Router
 
-###### :heavy_check_mark: App Router
+#### :heavy_check_mark: App Router
 
 When navigating to `/intercepting-route-name/paramValue` within `/route-name` this route will be intercepted and the URL updated to `/intercepting-route-name/paramValue`, however when this URL is shared the level context defined by convention will be maintained. It can be combined with Parallel Routes to obtain an excellent pattern for modals.
 
@@ -487,11 +484,11 @@ When navigating to `/intercepting-route-name/paramValue` within `/route-name` th
             ├── 📄 page.tsx
 ```
 
-##### Shared Routes
+#### Shared Routes
 
-###### :x: App Router
+#### :x: App Router
 
-###### :heavy_check_mark: Expo Router
+#### :heavy_check_mark: Expo Router
 
 Allows the same URL to be rendered with different layouts through the use of Route Groups. All Route Groups have access to `📄 [param].tsx`: `/(group-name-one)/[param].tsx`, `/(group-name-two)/[param].tsx` and `/(group-name-three)/[param].tsx`.
 
@@ -517,13 +514,13 @@ Duplication can be reduced using Array Syntax:
         ├── 📄 [param].tsx
 ```
 
-### :twisted_rightwards_arrows: Linking and Navigating
+## :twisted_rightwards_arrows: Linking and Navigating
 
-#### Navigation with `<Link>` Component
+### Navigation with `<Link>` Component
 
-##### Usage
+#### Usage
 
-###### Static Route with `href` as `String`
+#### Static Route with `href` as `String`
 
 ```tsx
 import { Link } from "react-universal-layer/navigation";
@@ -534,7 +531,7 @@ export default function Page() {
 }
 ```
 
-###### Dynamic Route with `href` as `String`
+#### Dynamic Route with `href` as `String`
 
 ```tsx
 import { Link } from "react-universal-layer/navigation";
@@ -545,7 +542,7 @@ export default function Page() {
 }
 ```
 
-###### Static Route with `href` as `Object`
+#### Static Route with `href` as `Object`
 
 ```tsx
 import { Link } from "react-universal-layer/navigation";
@@ -564,7 +561,7 @@ export default function Page() {
 }
 ```
 
-###### Dynamic Route with `href` as `Object`
+#### Dynamic Route with `href` as `Object`
 
 ```tsx
 import { Link } from "react-universal-layer/navigation";
@@ -584,7 +581,7 @@ export default function Page() {
 }
 ```
 
-###### Children as a Custom Component
+#### Children as a Custom Component
 
 ```tsx
 import { Pressable, Text } from "react-native";
@@ -602,7 +599,7 @@ export default function Page() {
 }
 ```
 
-##### API Reference
+#### API Reference
 
 | Param | Type | Required | Default | App Router | Expo Router |
 | --- | --- | --- | --- | --- | --- |
@@ -614,7 +611,7 @@ export default function Page() {
 
 <summary>Implementation Reference</summary>
 
-##### Invoking on App Router
+#### Invoking on App Router
 
 ```tsx
 import Link from 'next/link';
@@ -623,7 +620,7 @@ return <Link href={...}>...</Link>;
 ...
 ```
 
-##### Invoking on Expo Router
+#### Invoking on Expo Router
 
 ```tsx
 import { Pressable, Text } from 'react-native';
@@ -645,7 +642,7 @@ return (
 ...
 ```
 
-##### API Reference Comparasion
+#### API Reference Comparasion
 
 | Param | Type | Required | App Router | Expo Router | Incompatibility note |
 | --- | --- | --- | --- | --- | --- |
@@ -654,7 +651,7 @@ return (
 | `prefetch` | `Boolean` | No | :heavy_check_mark: | :x: |  |
 | `asChild` | `Boolean` | No | :x: | :heavy_check_mark: |  |
 
-##### Integration Rules Implemented
+#### Integration Rules Implemented
 
 - If `typeof children === React.ReactNode`:
   - Expo Router:
@@ -662,13 +659,13 @@ return (
 
 </details>
 
-#### Imperative Navigation with `router`
+### Imperative Navigation with `router`
 
 <details>
 
 <summary>Implementation Reference</summary>
 
-##### Invoking on App Router
+#### Invoking on App Router
 
 ```tsx
 import { useRouter } from 'next/router';
@@ -678,7 +675,7 @@ router.methodName();
 ...
 ```
 
-##### Invoking on Expo Router
+#### Invoking on Expo Router
 
 ```tsx
 import { router } from 'expo-router';
@@ -687,7 +684,7 @@ router.methodName();
 ...
 ```
 
-##### API Reference Comparasion
+#### API Reference Comparasion
 
 | Method | Type | App Router | Expo Router | Incompatibility note |
 | --- | --- | --- | --- | --- |
@@ -702,13 +699,13 @@ router.methodName();
 
 </details>
 
-#### Get Param(s) Sent Throug Route
+### Get Param(s) Sent Throug Route
 
 <details>
 
 <summary>Implementation Reference</summary>
 
-##### Invoking on App Router
+#### Invoking on App Router
 
 ```tsx
 import Link from 'next/link'
@@ -755,7 +752,7 @@ const searchParamAllValues = searchParams.getAll('searchParam') //-> ['searchPar
 ...
 ```
 
-##### Invoking on Expo Router
+#### Invoking on Expo Router
 
 ```tsx
 import { Link } from 'expo-router';
@@ -783,7 +780,7 @@ const { paramOne, paramTwo } = useGlobalSearchParams(); //-> { paramOne: 'paramO
 ...
 ```
 
-##### Distinction Between Path Parameters and Query Parameters
+#### Distinction Between Path Parameters and Query Parameters
 
 While the App Router distinguishes the parameters between [Path Parameters](https://swagger.io/docs/specification/describing-parameters/#path-parameters) and [Query Parameters/Query String](https://swagger.io/docs/specification/describing-parameters/#query-parameters) allowing access to them through the `useParams` and `useSearchParams` hooks, Expo Router does not distinguish, bringing both parameters through the `useLocalSearchParams` and `useGlobalSearchParams` hooks.
 
@@ -827,12 +824,12 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 
 </details>
 
-### :framed_picture: `<Image />` Component
+## :framed_picture: `<Image />` Component
 
-### :key: Authentication
+## :key: Authentication
 
-### :globe_with_meridians: Internationalization
+## :globe_with_meridians: Internationalization
 
-### :link: Environment Variables
+## :link: Environment Variables
 
-### :floppy_disk: Persistence
+## :floppy_disk: Persistence
