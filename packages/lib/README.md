@@ -1,5 +1,5 @@
 <p align='center'>
-    <h1 align='center'>React Universal Layer</h1>
+    <h1 align='center'>React Blend</h1>
 </p>
 
 - [:books: Documentation](#books-documentation)
@@ -841,8 +841,8 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 
 ## :clap: Contributing
 
-If you like **React Universal Layer** and want to help make it better, just open an issue or discussion in this repository.
+If you like **React Blend** and want to help make it better, just open an issue or discussion in this repository.
 
 ## :balance_scale: License
 
-The **React Universal Layer** source code is made available under the [MIT license](LICENSE).
+The **React Blend** source code is made available under the [MIT license](LICENSE).

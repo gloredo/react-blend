@@ -1,5 +1,5 @@
 <p align='center'>
-    <h1 align='center'>React Universal Layer</h1>
+    <h1 align='center'>React Blend</h1>
 </p>
 
 - [:world_map: Project Layout](#world_map-project-layout)
@@ -29,7 +29,7 @@ This repository is a monorepo that contains three main projects and a sandbox fo
   - `📁 src`: All library code, including Router, Image, Auth, Internationalization, Environment Variables and Persistence.
 - 📁 [cli](/cli/): Command-line Interface project.
   - `📄 README.md`: Command-line Interface documentation.
-  - `📁 src`: All `react-universal-layer-cli` code.
+  - `📁 src`: All `create-react-blend` code.
   - 📁 [templates](/cli/templates/): All templates that can be used with the CLI.
     - `📄 README.md`: Templates documentation.
     - `📁 src`: All templates code.
@@ -37,14 +37,14 @@ This repository is a monorepo that contains three main projects and a sandbox fo
   - `📄 README.md`: Visual Studio Code Extension documentation.
   - `📁 src`: All Visual Studio Code Extension documentation code.
 - 📁 [sandbox](/sandbox/): Development Testing Environment.
-  - `📁 next`: Next.js minimal project with **React Universal Layer**.
-  - `📁 expo`: Expo minimal project with **React Universal Layer**.
+  - `📁 next`: Next.js minimal project with **React Blend**.
+  - `📁 expo`: Expo minimal project with **React Blend**.
 
 ## :dart: Goal and Guidelines
 
-The **React Universal Layer** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
+The **React Blend** is a thin layer of integration between the [Next.js](https://nextjs.org/) and [Expo](https://expo.dev/home) APIs, solving API compatibility issues and providing a unified API that works with very little interference between framework APIs. The main pain solved is not having to worry about the specifics of each framework and simply using their available APIs, it's designed in a way that you don't even notice it's there.
 
-The macro goal of the **React Universal Layer** is to provide a simplified and integrated development for "React Universal Apps", a concept where shared React Native code is written using together the best technologies available in the React and JavaScript ecosystems using the same codebase, always sharing as much code as possible and making code unique to only one platform explicit through architecture.
+The macro goal of the **React Blend** is to provide a simplified and integrated development for "React Universal Apps", a concept where shared React Native code is written using together the best technologies available in the React and JavaScript ecosystems using the same codebase, always sharing as much code as possible and making code unique to only one platform explicit through architecture.
 
 :heart: This project is heavily inspired by [Solito](https://solito.dev/), thanks a lot to your amazing work! You can also understand more about "React Universal Apps" in these projects: [create-universal-app](https://github.com/chen-rn/CUA), [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo), [next-expo-solito](https://github.com/tamagui/tamagui/tree/master/starters/next-expo-solito) and [t3-turbo-and-clerk](https://github.com/clerkinc/t3-turbo-and-clerk).
 
@@ -105,7 +105,7 @@ end
 
 subgraph Shared Layer
     shared-code
-    subgraph React Universal Layer
+    subgraph React Blend
         rul-router
         rul-image
         rul-env-vars
@@ -126,7 +126,7 @@ workbox -.- rul-persistence -.- rn-mmkv
 
 ### :leaves: Making React Cross-Platform Development a Breeze
 
-Writing code that works on all platforms (Web, Android and iOS) is a difficult task, but writing code that works on all platforms using the best of your "native environments" is an even more difficult task. **React Universal Layer** offers integrations and complete documentation to make development as easy as possible. Currently the best technologies in the ecosystem for this approach are Next.js ([React DOM](https://react.dev/)) for Web and Expo ([React Native](https://reactnative.dev/)) for Android and iOS.
+Writing code that works on all platforms (Web, Android and iOS) is a difficult task, but writing code that works on all platforms using the best of your "native environments" is an even more difficult task. **React Blend** offers integrations and complete documentation to make development as easy as possible. Currently the best technologies in the ecosystem for this approach are Next.js ([React DOM](https://react.dev/)) for Web and Expo ([React Native](https://reactnative.dev/)) for Android and iOS.
 
 > Desktop development is a more complex topic as there are two good ways to go: building Web-Based Apps with [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.app/), or building Native Apps with [React Native Windows](https://github.com/microsoft/react-native-windows) and [React Native macOS](https://github.com/microsoft/react-native-macos).
 
@@ -156,26 +156,42 @@ Each section of the documentation can have a hidden section at the end called 'I
 
 ### Creating a Minimal App
 
-```shell
-npx react-universal-layer-cli@latest --create my-awesome-app
-```
-
-### :battery: Creating a Batteries Included App
+###### yarn
 
 ```shell
-npx react-universal-layer-cli@latest --create my-awesome-app --template with-batteries-included
+yarn create react-blend@latest --create my-awesome-app
 ```
-
-### Installing on Your Existing App
 
 ###### npm
 
 ```shell
-npm install react-universal-layer@latest
+npx create-react-blend@latest --create my-awesome-app
 ```
+
+### :battery: Creating a Batteries Included App
 
 ###### yarn
 
 ```shell
-yarn add react-universal-layer@latest
+yarn create react-blend@latest --create my-awesome-app --template with-batteries-included
+```
+
+###### npm
+
+```shell
+npx create-react-blend@latest --create my-awesome-app --template with-batteries-included
+```
+
+### Installing on Your Existing App
+
+###### yarn
+
+```shell
+yarn add react-blend@latest
+```
+
+###### npm
+
+```shell
+npm install react-blend@latest
 ```

@@ -1,5 +1,5 @@
 <p align='center'>
-    <h1 align='center'>React Universal Layer CLI</h1>
+    <h1 align='center'>React Blend CLI</h1>
 </p>
 
 ---
