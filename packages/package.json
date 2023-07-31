@@ -1,5 +1,5 @@
 {
-  "name": "react-universal-layer",
+  "name": "react-blend",
   "version": "0.1.0",
   "description": "A thin integration layer between Next.js and Expo",
   "repository": "git@github.com:gloredo/react-universal-layer.git",
@@ -9,8 +9,7 @@
   "workspaces": {
     "packages": [
       "cli",
-      "lib",
-      "vscode-extension"
+      "lib"
     ]
   }
 }
