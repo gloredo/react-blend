@@ -21,24 +21,25 @@
 
 ## :world_map: Project Layout
 
-This repository is a monorepo that contains three main projects and a sandbox folder to use during development.
+This repository is a monorepo that contains two projects and a sandbox development folder to be used during development.
 
-- `📄 README.md`: Project overview.
-- 📁 [lib](/lib/): Library project.
-  - `📄 README.md`: Library documentation.
-  - `📁 src`: All library code, including Router, Image, Auth, Internationalization, Environment Variables and Persistence.
-- 📁 [cli](/cli/): Command-line Interface project.
-  - `📄 README.md`: Command-line Interface documentation.
-  - `📁 src`: All `create-react-blend` code.
-  - 📁 [templates](/cli/templates/): All templates that can be used with the CLI.
-    - `📄 README.md`: Templates documentation.
-    - `📁 src`: All templates code.
-- 📁 [vscode-extension](/vscode-extension/): Visual Studio Code Extension project.
-  - `📄 README.md`: Visual Studio Code Extension documentation.
-  - `📁 src`: All Visual Studio Code Extension documentation code.
-- 📁 [sandbox](/sandbox/): Development Testing Environment.
-  - `📁 next`: Next.js minimal project with **React Blend**.
-  - `📁 expo`: Expo minimal project with **React Blend**.
+- `📄 README.md`: Project overview (This file)
+- 📁 [packages](/packages/): Folder containing the two projects
+  - 📁 [lib](/lib/): Library project folder
+    - `📄 README.md`: `react-blend` documentation
+    - `📁 src`: Contains the code for the Router, Image and Persistence
+    - `📁 scripts`: Contains scripts to synchronize Authentication, Internationalization and Environment Variables
+  - 📁 [cli](/cli/): Command-line Interface project to `create-react-blend`
+    - `📄 README.md`: `create-react-blend` documentation
+    - `📁 src`: All `create-react-blend` code
+    - 📁 [templates](/cli/templates/): All templates that can be used with `create-react-blend`
+      - `📄 README.md`: Templates documentation
+      - `📁 src`: All templates code
+- 📁 [development-sandbox](/development-sandbox/): Test environment created from [Create Tamagui App](https://tamagui.dev/docs/guides/create-tamagui-app) with the `next-expo-solito` template to be used during `react-blend` development
+  - `📁 apps`: Next.js and Expo projects
+    - `📁 next`: Next.js project
+    - `📁 expo`: Expo project
+  - `📁 packages`: Shared Code organized by features with `react-blend`
 
 ## :dart: Goal and Guidelines
 
