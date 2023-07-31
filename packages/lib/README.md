@@ -2,7 +2,9 @@
     <h1 align='center'>React Blend Documentation</h1>
 </p>
 
-If you haven't read it yet, we recommend starting with the [Project Overview Documentation](/)
+> TIP
+>
+> If you haven't read it yet, we recommend starting with the [Project Overview Documentation](/).
 
 - [:card_file_box: Roles of Files and Folders](#card_file_box-roles-of-files-and-folders)
   - [Important Rules](#important-rules)
