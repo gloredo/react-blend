@@ -81,12 +81,12 @@ expo-env-vars(Expo Environment Variables)
 rn-mmkv(React Native MMKV)
 
 shared-code{{Your Shared Code}}
-rul-router(Universal Router)
-rul-image(Universal Image)
-rul-auth(Universal Auth)
-rul-internationalization(Universal Internationalization)
-rul-env-vars(Universal Environment Variables)
-rul-persistence(Universal Persistence)
+rb-router(React Blend Router)
+rb-image(React Blend Image)
+rb-auth(React Blend Auth)
+rb-internationalization(React Blend Internationalization)
+rb-env-vars(React Blend Environment Variables)
+rb-persistence(React Blend Persistence)
 
 subgraph Next.js Layer
     next-specific
@@ -116,22 +116,22 @@ end
 subgraph Shared Layer
     shared-code
     subgraph React Blend
-        rul-router
-        rul-image
-        rul-env-vars
-        rul-internationalization
-        rul-persistence
-        rul-auth
+        rb-router
+        rb-image
+        rb-env-vars
+        rb-internationalization
+        rb-persistence
+        rb-auth
     end
 end
 
-app-router -.- rul-router -.- expo-router
-next-image -.- rul-image -.- expo-image
-auth-js -.- rul-auth -.- expo-auth
-next-i18n -.- rul-internationalization -.- expo-localization
-rul-internationalization -.- lingui-js
-next-env-vars -.- rul-env-vars -.- expo-env-vars
-workbox -.- rul-persistence -.- rn-mmkv
+app-router -.- rb-router -.- expo-router
+next-image -.- rb-image -.- expo-image
+auth-js -.- rb-auth -.- expo-auth
+next-i18n -.- rb-internationalization -.- expo-localization
+rb-internationalization -.- lingui-js
+next-env-vars -.- rb-env-vars -.- expo-env-vars
+workbox -.- rb-persistence -.- rn-mmkv
 ```
 
 ### :leaves: Making React Cross-Platform Development a Breeze
