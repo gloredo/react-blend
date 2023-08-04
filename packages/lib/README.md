@@ -2,10 +2,6 @@
     <h1 align='center'>React Blend Documentation</h1>
 </p>
 
-> TIP
->
-> If you haven't read it yet, we recommend starting with the [Project Overview Documentation](/).
-
 - [:card_file_box: Roles of Files and Folders](#card_file_box-roles-of-files-and-folders)
   - [Important Rules](#important-rules)
   - [Files Roles](#files-roles)
@@ -15,10 +11,14 @@
   - [Imperative Navigation with `router`](#imperative-navigation-with-router)
   - [Get Param(s) Sent Throug Route](#get-params-sent-throug-route)
 - [:framed_picture: `<Image />` Component](#framed_picture-image--component)
-- [:key: Authentication](#key-authentication)
+- [:passport_control: Authentication](#passport_control-authentication)
 - [:globe_with_meridians: Internationalization](#globe_with_meridians-internationalization)
 - [:link: Environment Variables](#link-environment-variables)
 - [:floppy_disk: Persistence](#floppy_disk-persistence)
+
+> TIP
+>
+> If you haven't read it yet, we recommend starting with the [Project Overview Documentation](/).
 
 ## :card_file_box: Roles of Files and Folders
 
@@ -830,7 +830,7 @@ const { queryParam, pathParam } = useLocalSearchParams(); //-> { queryParam: 'qu
 
 ## :framed_picture: `<Image />` Component
 
-## :key: Authentication
+## :passport_control: Authentication
 
 ## :globe_with_meridians: Internationalization
 

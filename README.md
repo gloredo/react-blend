@@ -11,9 +11,9 @@
   - [:arrow_up_down: Using Next.js as the Only Web Technology](#arrow_up_down-using-nextjs-as-the-only-web-technology)
   - [:bulb: Implementation Reference Sections](#bulb-implementation-reference-sections)
 - [:rocket: Getting Started](#rocket-getting-started)
-  - [Creating a Minimal App](#creating-a-minimal-app)
+  - [:beginner: Creating a Minimal App](#beginner-creating-a-minimal-app)
   - [:battery: Creating a Batteries Included App](#battery-creating-a-batteries-included-app)
-  - [Installing on Your Existing App](#installing-on-your-existing-app)
+  - [:electric_plug: Integrating on Your Existing App](#electric_plug-integrating-on-your-existing-app)
 - [:clap: Contributing](#clap-contributing)
 - [:balance_scale: License](#balance_scale-license)
 
@@ -27,21 +27,28 @@ This repository is a monorepo that contains two projects and a sandbox developme
 
 - `📄 README.md`: Project overview (This file)
 - `📁` [`packages`](/packages/): Folder containing the two projects
-  - 📁 [`lib`](/packages/lib/): Library project folder
+  - 📁 [`lib`](/packages/lib/): Library project
     - `📄 README.md`: `react-blend` documentation
     - `📁 src`: Contains the code for the Router, Image and Persistence
     - `📁 scripts`: Contains scripts to synchronize Authentication, Internationalization and Environment Variables
-  - `📁` [`cli`](/packages/cli/): Command-line Interface project folder
+  - `📁` [`cli`](/packages/cli/): Command-line Interface project
     - `📄 README.md`: `create-react-blend` documentation
-    - `📁 src`: All `create-react-blend` code
-    - `📁` [`templates`](/cli/templates/): All templates that can be used with `create-react-blend`
+    - `📁 src`: `create-react-blend` code
+    - `📁` [`templates`](/cli/templates/): Templates that can be used with `create-react-blend`
       - `📄 README.md`: Templates documentation
-      - `📁 src`: All templates code
-- `📁` [`development-sandbox`](/development-sandbox/): Test environment created from [Create Tamagui App](https://tamagui.dev/docs/guides/create-tamagui-app) with the `next-expo-solito` template to be used during `react-blend` development
-  - `📁` [`apps`](/development-sandbox/apps/): Next.js and Expo projects
+      - `📁 src`: Templates code
+- `📁` [`development-sandbox`](/development-sandbox/): Minimum test environment to be used during development covering all features
+  - `📁` [`apps`](/development-sandbox/apps/): Framework specific projects
     - `📁 next`: Next.js project
     - `📁 expo`: Expo project
-  - `📁` [`packages`](/development-sandbox/packages/): Shared Code organized by features with `react-blend`
+  - `📁` [`packages`](/development-sandbox/packages/)
+    - `📁 app`: Shared code and export of all packages below
+    - `📁 auth`: Implements Sign In and Sign Up flows
+    - `📁 navigation`: Implements all possible navigation flows
+    - `📁 image`: Implements the Image component
+    - `📁 i18n`: Implements several examples of internationalization
+    - `📁 env-var`: Displays all environment variables
+    - `📁 offline`: Implements a minimal to-do that works offline
 
 ## :dart: Goal and Guidelines
 
@@ -59,7 +66,7 @@ graph LR
 next-specific{{Your Next.js Specific Code and Files}}
 app-router(App Router)
 next-image(Next Image)
-next-auth(Next Auth)
+auth-js(Auth.js)
 next-i18n(Next Internationalization Routing)
 next-env-vars(Next Environment Variables)
 workbox(Workbox)
@@ -69,7 +76,7 @@ expo-router(Expo Router)
 expo-image(Expo Image)
 expo-auth(Expo Auth)
 expo-localization(Expo Localization)
-i18n-js(i18n.js)
+lingui-js(Lingui.js)
 expo-env-vars(Expo Environment Variables)
 rn-mmkv(React Native MMKV)
 
@@ -89,7 +96,7 @@ subgraph Next.js Layer
         next-i18n
         next-env-vars
     end
-    next-auth
+    auth-js
     workbox
 end
 
@@ -102,7 +109,7 @@ subgraph Expo Layer
         expo-localization
         expo-auth
     end
-    i18n-js
+    lingui-js
     rn-mmkv
 end
 
@@ -120,9 +127,9 @@ end
 
 app-router -.- rul-router -.- expo-router
 next-image -.- rul-image -.- expo-image
-next-auth -.- rul-auth -.- expo-auth
+auth-js -.- rul-auth -.- expo-auth
 next-i18n -.- rul-internationalization -.- expo-localization
-rul-internationalization -.- i18n-js
+rul-internationalization -.- lingui-js
 next-env-vars -.- rul-env-vars -.- expo-env-vars
 workbox -.- rul-persistence -.- rn-mmkv
 ```
@@ -137,7 +144,7 @@ Writing code that works on all platforms (Web, Android and iOS) is a difficult t
 
 ### :checkered_flag: Be the Starting Point for New Projects
 
-Integrating **React Native Layer** into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with [Tamagui](https://tamagui.dev/), [TanStack Query](https://tanstack.com/query/latest), [Zustand](https://zustand-demo.pmnd.rs/), [React Native MMKV](https://github.com/mrousavy/react-native-mmkv), [Workbox](https://developer.chrome.com/docs/workbox/) and [ESLint](https://eslint.org/).
+Integrating **React Blend** into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with several industry standard libraries. See the [template documentation](/cli/templates/) for details.
 
 ### :vertical_traffic_light: Staying as Close to the Original Design as Possible
 
@@ -157,7 +164,7 @@ Each section of the documentation can have a hidden section at the end called 'I
 
 ## :rocket: Getting Started
 
-### Creating a Minimal App
+### :beginner: Creating a Minimal App
 
 ###### yarn
 
@@ -185,7 +192,7 @@ yarn create react-blend@latest --create my-awesome-app --template with-batteries
 npx create-react-blend@latest --create my-awesome-app --template with-batteries-included
 ```
 
-### Installing on Your Existing App
+### :electric_plug: Integrating on Your Existing App
 
 ###### yarn
 
