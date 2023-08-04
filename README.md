@@ -164,6 +164,10 @@ Each section of the documentation can have a hidden section at the end called 'I
 
 ## :rocket: Getting Started
 
+> TIP
+>
+> After creating or configuring your project, [go to the documentation](/packages/lib/).
+
 ### :beginner: Creating a Minimal App
 
 ###### yarn
