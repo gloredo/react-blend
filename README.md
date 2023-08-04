@@ -144,7 +144,7 @@ Writing code that works on all platforms (Web, Android and iOS) is a difficult t
 
 ### :checkered_flag: Be the Starting Point for New Projects
 
-Integrating **React Blend** into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with several industry standard libraries. See the [template documentation](/packages/cli/templates/) for details.
+Integrating **React Blend** into a new project can be a tedious process, plus you need to know the best packages that work fully Natively and on the Web. To make this job easier we provide a CLI that allows you to create a Batteries Included, offline-first App with several industry standard libraries. See the [Batteries Included Template documentation](/packages/cli/templates/README.md#🔋-batteries-included-template) for details.
 
 ### :vertical_traffic_light: Staying as Close to the Original Design as Possible
 
