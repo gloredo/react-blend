@@ -160,7 +160,7 @@ Despite being often seen as a framework for Hybrid Mobile Development, Expo posi
 
 ### :bulb: Implementation Reference Sections
 
-Each section of the documentation can have a hidden section at the end called 'Implementation Reference', responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
+Each section of the documentation can have a hidden section at the end called "Implementation Reference", responsible for gathering all the information necessary to demonstrate the use and differences between the frameworks, as well as mapping possible new additions that need to be made for full integration. You don't have to worry about it, it's just for curious people and developers of this package.
 
 ## :rocket: Getting Started
 
