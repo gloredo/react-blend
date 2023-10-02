@@ -1,4 +1,5 @@
 <p align='center'>
+    <h2 align='center'>:warning: CONCEPT UNDER DEVELOPMENT :warning:</h2>
     <h1 align='center'>React Blend</h1>
 </p>
 
